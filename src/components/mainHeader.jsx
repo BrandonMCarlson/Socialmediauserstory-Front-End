@@ -9,12 +9,12 @@ const MainHeader = ({ user }) => {
             <nav>
                 <ul classname="header">
                     <li>
-                        <NavLink activeclassname="active" to="/welcome">
+                        <NavLink activeclassname="active" to="/">
                             <button> Welcome { user ? user.name : null}</button>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeclassname="active" to="/notifications">
+                        <NavLink activeclassname="active" to="/">
                             <button>Notifications</button>
                         </NavLink>
                     </li>
