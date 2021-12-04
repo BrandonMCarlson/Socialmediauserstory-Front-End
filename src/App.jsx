@@ -63,8 +63,8 @@ function App() {
       <MainHeader />
       <main>
         <Routes>
-          <Route path="/" element={<Welcome loginUser={loginUser} />}></Route>
-          <Route path="login" element={<Login  />}></Route>
+          <Route path="/" element={<Welcome />}></Route>
+          <Route path="login" element={<Login loginUser={loginUser} />}></Route>
           <Route path="register" element={<Register/>}></Route>
           <Route path="profile" element={<Profile/>}></Route>
         </Routes>
