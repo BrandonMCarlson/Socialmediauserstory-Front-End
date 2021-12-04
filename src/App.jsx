@@ -14,10 +14,11 @@ function App() {
 
   const registerUser = async () => {
     await axios
-      .post("http://localhost:5000/api/users", {
-        name: "Cust0",
-        email: "cust0@cust0.com",
-        password: "cust0",
+      .post("http://localhost:5000/api/users/register", {
+        firstName: "Cust3",
+        lastName: "Cust3",
+        email: "cust3@cust3.com",
+        password: "cust3",
       })
       .then((res) => {
         localStorage.setItem("token", res.headers["x-auth-token"]);
@@ -52,20 +53,20 @@ function App() {
 
 
   useEffect(() => {
-    registerUser();
-    loginUser();
+    // registerUser();
+    // loginUser();
   }, []);
 
   return (
     <div className="App">
       hi
-    <button onClick={()=>loginUser()}>PRESS ME</button><button onClick={()=>logoutUser()}>LOG OUT</button>
+    <button onClick={()=>registerUser()}>REGISTER USER</button><button onClick={()=>logoutUser()}>LOG OUT</button>
       <MainHeader />
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
           <Route path="login" element={<Login loginUser={loginUser} />}></Route>
-          <Route path="register" element={<Register/>}></Route>
+          <Route path="register" element={<Register registerUser={registerUser} />}></Route>
           <Route path="profile" element={<Profile/>}></Route>
         </Routes>
       </main>
