@@ -33,10 +33,11 @@ function App() {
   };
 
   const loginUser = async () => {
+    debugger
     await axios
         .post("http://localhost:5000/api/auth", {
-          email: "cust1@cust1.com",
-          password: "cust1",
+          email: "cust3@cust3.com",
+          password: "cust3",
         })
         .then((res) => {
           localStorage.setItem("token", res.data);
@@ -71,11 +72,26 @@ function App() {
       })
   }
 
+  const updateAboutMe = async () => {
+    await axios
+      .put(`http://localhost:5000/api/users/61aad32098c81a5fe8132bbc`, {
+            firstName: user.firstName,
+            lastName: user.lastName,
+            aboutMe: "update from FRONTEND 2",
+            email: user.email,
+            password: user.password,
+      }, 
+      { headers: { 'x-auth-token': localStorage.getItem('token') } })
+      .then((res) => {
+        setUser(res.data);
+        console.log(user);
+      });
+  }
+
 
   // useEffect(() => {
-  //   // registerUser();
-  //   // loginUser();
-  // }, []);
+
+  // }, [user]);
 
   return (
     <div className="App">
@@ -87,7 +103,7 @@ function App() {
           <Route path="/" element={<Welcome />}></Route>
           <Route path="login" element={<Login loginUser={loginUser} />}></Route>
           <Route path="register" element={<Register registerUser={registerUser} />}></Route>
-          <Route path="profile" element={<Profile getAProfile={getAProfile} getFriends={getFriends} />}></Route>
+          <Route path="profile" element={<Profile updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>
       </main>
    
