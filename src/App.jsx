@@ -14,7 +14,7 @@ function App() {
 
   const registerUser = async () => {
     await axios
-      .post("http:localhost:5000/api/users", {
+      .post("http://localhost:5000/api/users", {
         name: "Cust0",
         email: "cust0@cust0.com",
         password: "cust0",
@@ -31,18 +31,19 @@ function App() {
 
   const loginUser = async () => {
     await axios
-        .post("http:localhost:5000/api/auth", {
-          email: "cust0@cust0.com",
-          password: "cust0",
+        .post("http://localhost:5000/api/auth", {
+          email: "cust1@cust1.com",
+          password: "cust1",
         })
         .then((res) => {
           localStorage.setItem("token", res.data);
           const user = jwtDecode(localStorage.getItem("token"));
+          setUser(user);
         })
         .catch((error) => console.log(error));
   };
 
-  const logoutUser = async () => {
+   const logoutUser = async () => {
     console.log(localStorage.getItem("token"));
     localStorage.removeItem("token");
     setUser(null);
@@ -58,12 +59,12 @@ function App() {
   return (
     <div className="App">
       hi
-
+    <button onClick={()=>loginUser()}>PRESS ME</button>
       <MainHeader />
       <main>
         <Routes>
-          <Route path="/" element={<Welcome/>}></Route>
-          <Route path="login" element={<Login/>}></Route>
+          <Route path="/" element={<Welcome loginUser={loginUser} />}></Route>
+          <Route path="login" element={<Login  />}></Route>
           <Route path="register" element={<Register/>}></Route>
           <Route path="profile" element={<Profile/>}></Route>
         </Routes>
