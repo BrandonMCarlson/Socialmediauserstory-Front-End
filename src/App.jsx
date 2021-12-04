@@ -11,6 +11,7 @@ import Register from "./components/pages/Register";
 
 function App() {
   const [user, setUser] = useState([]);
+  const [friends, setFriends] = useState([]);
 
   const registerUser = async () => {
     await axios
@@ -51,11 +52,20 @@ function App() {
     console.log(localStorage.getItem("token"));
   };
 
+  const getFriends = async () => {   
+    await axios
+      .get("http://localhost:5000/api/users", { headers: { 'x-auth-token': localStorage.getItem('token') } })
+      .then((res) => {
+        setFriends(res.data);
+        console.log(res.data)
+      })
+  }
 
-  useEffect(() => {
-    // registerUser();
-    // loginUser();
-  }, []);
+
+  // useEffect(() => {
+  //   // registerUser();
+  //   // loginUser();
+  // }, []);
 
   return (
     <div className="App">
@@ -67,7 +77,7 @@ function App() {
           <Route path="/" element={<Welcome />}></Route>
           <Route path="login" element={<Login loginUser={loginUser} />}></Route>
           <Route path="register" element={<Register registerUser={registerUser} />}></Route>
-          <Route path="profile" element={<Profile/>}></Route>
+          <Route path="profile" element={<Profile getFriends={getFriends} />}></Route>
         </Routes>
       </main>
    
