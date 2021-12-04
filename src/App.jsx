@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import mainHeader from "./components/mainHeader";
+import MainHeader from "./components/MainHeader";
 import { Route, Routes } from "react-router";
 import jwtDecode from "jwt-decode";
 
@@ -45,7 +45,8 @@ function App() {
 
   return (
     <div className="App">
-      <mainHeader/>
+      hi
+      <MainHeader />
     </div>
   );
 }

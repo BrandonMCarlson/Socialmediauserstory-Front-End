@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const MainHeader = ({ user }) => {
     return(
-        <header>
+        <div>
             <nav>
                 <ul classname="header">
                     <li>
@@ -20,7 +20,7 @@ const MainHeader = ({ user }) => {
                     </li>
                 </ul>
             </nav>
-        </header>
+        </div>
     );
 };
 
