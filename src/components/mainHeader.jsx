@@ -1,5 +1,5 @@
-
-
+import React from 'react';
+import { NavLink } from "react-router-dom";
 
 
 
@@ -10,13 +10,13 @@ const MainHeader = ({ user }) => {
                 <ul classname="header">
                     <li>
                         <NavLink activeclassname="active" to="/welcome">
-                            <Button> Welcome { user ? user.name : null}</Button>
+                            <button> Welcome { user ? user.name : null}</button>
                         </NavLink>
                     </li>
                     <li>
-                        <Navlink activeclassname="active" to="/welcome">
-                            <Button>Notifications</Button>
-                        </Navlink>
+                        <NavLink activeclassname="active" to="/welcome">
+                            <button>Notifications</button>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
