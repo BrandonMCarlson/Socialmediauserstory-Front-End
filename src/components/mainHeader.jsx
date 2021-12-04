@@ -14,7 +14,7 @@ const MainHeader = ({ user }) => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeclassname="active" to="/welcome">
+                        <NavLink activeclassname="active" to="/notifications">
                             <button>Notifications</button>
                         </NavLink>
                     </li>

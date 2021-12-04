@@ -4,6 +4,10 @@ import axios from "axios";
 import MainHeader from "./components/MainHeader";
 import { Route, Routes } from "react-router";
 import jwtDecode from "jwt-decode";
+import Welcome from "./components/pages/Welcome";
+import Profile from "./components/pages/Profile";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -46,7 +50,17 @@ function App() {
   return (
     <div className="App">
       hi
+
       <MainHeader />
+      <main>
+        <Routes>
+          <Route path="/" element={<Welcome/>}></Route>
+          <Route path="login" element={<Login/>}></Route>
+          <Route path="register" element={<Register/>}></Route>
+          <Route path="profile" element={<Profile/>}></Route>
+        </Routes>
+      </main>
+   
     </div>
   );
 }
