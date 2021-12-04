@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App">
       hi
-    <button onClick={()=>loginUser()}>PRESS ME</button>
+    <button onClick={()=>loginUser()}>PRESS ME</button><button onClick={()=>logoutUser()}>LOG OUT</button>
       <MainHeader />
       <main>
         <Routes>
