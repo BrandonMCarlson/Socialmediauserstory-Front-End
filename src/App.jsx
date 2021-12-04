@@ -4,7 +4,10 @@ import axios from "axios";
 import MainHeader from "./components/MainHeader";
 import { Route, Routes } from "react-router";
 import jwtDecode from "jwt-decode";
-import Button from "./components/Button";
+import Welcome from "./components/pages/Welcome";
+import Profile from "./components/pages/Profile";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -35,7 +38,6 @@ function App() {
         .then((res) => {
           localStorage.setItem("token", res.data);
           const user = jwtDecode(localStorage.getItem("token"));
-          setUser(user);
         })
         .catch((error) => console.log(error));
   };
@@ -47,17 +49,26 @@ function App() {
     console.log(localStorage.getItem("token"));
   };
 
+
   useEffect(() => {
     registerUser();
     loginUser();
-    logoutUser();
   }, []);
 
   return (
     <div className="App">
       hi
+
       <MainHeader />
-      <Button/>
+      <main>
+        <Routes>
+          <Route path="/" element={<Welcome/>}></Route>
+          <Route path="login" element={<Login/>}></Route>
+          <Route path="register" element={<Register/>}></Route>
+          <Route path="profile" element={<Profile/>}></Route>
+        </Routes>
+      </main>
+   
     </div>
   );
 }
