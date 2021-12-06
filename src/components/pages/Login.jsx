@@ -4,6 +4,7 @@ import Button from "../Button";
 import useForm from "../../useForm";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import {Link} from "react-router-dom";
 
 
 const Login = ({setUser}) => {
@@ -32,8 +33,8 @@ const Login = ({setUser}) => {
    
     return ( 
         <div>
-            <h1>Login</h1>
             <Button/>
+           <h1>Login Page</h1>
             <form>
                 <input name="email" type="text" onChange={(event)=>handleChange(event)} placeholder="E-mail"/>
                 <p></p>
@@ -41,7 +42,8 @@ const Login = ({setUser}) => {
                 <p></p>
                 <button type="subbmit" onClick={(event)=>handleSubmit(event)}>Login Here</button>
             </form>
-           
+
+            <Link to="/register"><button>Register Page</button></Link>
         </div>
      );
 }
