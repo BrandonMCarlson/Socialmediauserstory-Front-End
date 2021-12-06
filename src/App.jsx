@@ -101,7 +101,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
-          <Route path="login" element={<Login loginUser={loginUser} />}></Route>
+          <Route path="login" element={<Login loginUser={loginUser} setUser={setUser} />}></Route>
           <Route path="register" element={<Register registerUser={registerUser} />}></Route>
           <Route path="profile" element={<Profile updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>

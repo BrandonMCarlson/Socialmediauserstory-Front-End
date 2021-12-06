@@ -5,7 +5,7 @@ const useForm = (callback) => {
 
     const handleChange = (event) => {
         event.persist(); 
-        setFormValue(event.target.value);
+        setFormValue(values => ({...values, [event.target.name]: event.target.value}));
     };
 
     const handleSubmit = (event, comment=null) => {
