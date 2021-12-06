@@ -5,8 +5,9 @@ import Button from "../Button";
 const Profile = ({getFriends, getAProfile, updateAboutMe}) => {
     return ( 
         <div>
+             <Button/>
             <h1>Profile</h1>
-            <Button/>
+           
             <button onClick={()=>getFriends()}>FRIENDS IN CONSOLE</button>
             <button onClick={()=>getAProfile()}>PROFILE IN CONSOLE</button>
             <button onClick={()=>updateAboutMe()}>UPDATE ABOUT ME</button>
