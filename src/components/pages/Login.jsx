@@ -6,6 +6,8 @@ import jwtDecode from "jwt-decode";
 import TextField from "@mui/material/TextField";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import catCig from  "../../images/cat-cig.jpg";
+import catReg from "../../images/cat-register.jpg";
 
 
 const Login = ({setUser, setProfile}) => {
@@ -37,25 +39,29 @@ const Login = ({setUser, setProfile}) => {
    
     return ( 
         <div className="whole-login-div">
-           <div className="login-title"><h1>Login</h1></div>
+           <div className="cat-reg-div">
+              <img className="cat-reg-img"width="300"src={catReg} alt="" />
+           </div>
             <div>
-              <div className="login-text-field">
-                <form>
-                    <TextField id="outlined-basic" name="email" label="E-mail" onChange={(event)=>handleChange(event)} variant="outlined" />
-                    <p></p>
-                    <TextField id="outlined-basic" type="password" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" />
-                    <p></p>
-                    <div className="register-here-button">
-                      <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Login Here</Button>
-                    </div>
-                </form>
-                <div className="register-here-button">
-                   <Link style={{ textDecoration: 'none' }} to="/register"> <Button variant="contained">Regester Here</Button></Link>
+              <div className="login-title"><h1>MemeBook</h1><br></br><h1>Login</h1></div>
+                <div className="login-text-field">
+                  <form>
+                      <TextField id="outlined-basic" name="email" label="E-mail" onChange={(event)=>handleChange(event)} variant="outlined" />
+                      <p></p>
+                      <TextField id="outlined-basic" type="password" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" />
+                      <p></p>
+                      <div className="register-here-button">
+                        <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Login Here</Button>
+                      </div>
+                  </form>
+                  <div className="register-here-button">
+                    <Link style={{ textDecoration: 'none' }} to="/register"> <Button variant="contained">Regester Here</Button></Link>
+                  </div>
                 </div>
-            
-              </div>
             </div>
-        
+            <div>
+              <img width="400"src={catCig} alt="" />
+            </div>
         </div>
      );
 }

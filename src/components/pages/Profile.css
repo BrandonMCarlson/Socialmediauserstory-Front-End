@@ -78,4 +78,16 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
 }
 .whole-login-div {
     margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cat-reg-div {
+    transform: rotate(20deg);
+    margin-left: 120px;
+    margin-top: 115px;
+}
+
+.cat-reg-img {
+    border-radius: 20px;
 }
