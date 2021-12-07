@@ -105,7 +105,7 @@ const Register = ({user, setUser}) => {
             required
           />
             </div>
-            <button type="subbmit" onClick={(event)=>handleSubmit(event)}>Register Here</button>
+            <button className="our-button" type="subbmit" onClick={(event)=>handleSubmit(event)}>Register Here</button>
             </form>
         </div>
        

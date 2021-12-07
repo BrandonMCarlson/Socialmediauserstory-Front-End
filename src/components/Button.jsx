@@ -5,10 +5,10 @@ import Buttoncss from "../components/Button.css";
 const Button = () => {
     return ( 
         <div>
-            <Link to="/"><button>Welcome Page</button></Link>
-            <Link to="/register"><button>Register Page</button></Link>
-            <Link to="/login"><button>Login Page</button></Link>
-            <Link to="/profile"><button>Profile Page</button></Link>
+            <Link to="/"><button className="our-button">Welcome Page</button></Link>
+            <Link to="/register"><button className="our-button">Register Page</button></Link>
+            <Link to="/login"><button className="our-button">Login Page</button></Link>
+            <Link to="/profile"><button className="our-button">Profile Page</button></Link>
         </div>
      );
 }

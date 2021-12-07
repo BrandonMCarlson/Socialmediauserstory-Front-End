@@ -35,12 +35,12 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
             src={`http://localhost:5000/${user.image}`}
             alt={`${user.firstName}'s photos'`}
           />
-          <button>
+          <button className="our-button">
             <AddToPhotosIcon fontSize="medium"></AddToPhotosIcon>
           </button>
           <p></p>
-          <button onClick={() => updateAboutMe()}>UPDATE ABOUT ME </button>
-          <button><AppRegistrationIcon fontSize="medium"></AppRegistrationIcon></button>
+          <button className="our-button" onClick={() => updateAboutMe()}>UPDATE ABOUT ME </button>
+          <button className="our-button"><AppRegistrationIcon fontSize="medium"></AppRegistrationIcon></button>
           
         </div>
 
@@ -66,11 +66,11 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
                   <PeopleIcon
                   fontSize="large">
                   </PeopleIcon>
-                  <button onClick={() => getFriends()}>
+                  <button className="our-button" onClick={() => getFriends()}>
                     FRIENDS IN CONSOLE
                   </button>
                   <p></p>
-                  <button onClick={() => getAProfile()}>
+                  <button className="our-button" onClick={() => getAProfile()}>
                     PROFILE IN CONSOLE
                   </button>
                 </TabPanel>

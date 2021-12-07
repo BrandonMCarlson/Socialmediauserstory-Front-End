@@ -8,6 +8,7 @@ import Welcome from "./components/pages/Welcome";
 import Profile from "./components/pages/Profile";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -122,9 +123,8 @@ const handleConfirmPassword = () => {
   return (
     <div className="App">
       
-
+    <NavBar/>
     
-     
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
