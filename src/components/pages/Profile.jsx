@@ -29,12 +29,14 @@ const Profile = ({getFriends, getAProfile, updateAboutMe, user}) => {
                   <h1>{user.firstName}</h1>
                   <img src={`http://localhost:5000/${user.image}`} alt={`${user.firstName}'s photos'`} />
                   <button>Upload Photo</button>
+                  <p></p>
+                  <button onClick={()=>updateAboutMe()}>UPDATE ABOUT ME</button>
                 </div>
              
                 <div>
-                    <button onClick={()=>getFriends()}>FRIENDS IN CONSOLE</button>
-                    <button onClick={()=>getAProfile()}>PROFILE IN CONSOLE</button>
-                    <button onClick={()=>updateAboutMe()}>UPDATE ABOUT ME</button>
+                    
+                    
+                    
 
                     <input type="text" />
 
@@ -43,18 +45,23 @@ const Profile = ({getFriends, getAProfile, updateAboutMe, user}) => {
                 <div>
                 <div>
                     <Box sx={{ width: '100%', typography: 'body1' }}>
-                    <TabContext value={value}>
-                    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example">
-                    <Tab label="Item One" value="1" />
-                    <Tab label="Item Two" value="2" />
-                    <Tab label="Item Three" value="3" />
-                    </TabList>
-                    </Box>
-                    <TabPanel value="1">Item One</TabPanel>
-                    <TabPanel value="2">Item Two</TabPanel>
-                    <TabPanel value="3">Item Three</TabPanel>
-                    </TabContext>
+                      <TabContext value={value}>
+                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                          <TabList onChange={handleChange} aria-label="lab API tabs example">
+                            <Tab label="Home" value="1" />
+                            <Tab label="Friends" value="2" />
+                            <Tab label="Notifications" value="3" />
+                          </TabList>
+                        </Box>
+                          <TabPanel value="1">Item One</TabPanel>
+                          <TabPanel value="2"><button onClick={()=>getFriends()}>
+                                                  FRIENDS IN CONSOLE
+                                                  </button>
+                                                  <p></p>
+                                                  <button onClick={()=>getAProfile()}>PROFILE IN CONSOLE</button>
+                          </TabPanel>
+                          <TabPanel value="3">Item Three</TabPanel>
+                        </TabContext>
                     </Box>
                     </div>
                 </div>
