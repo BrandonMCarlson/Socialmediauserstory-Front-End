@@ -59,3 +59,23 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
 .notifiactions-image-text {
     margin-left: -12px;
 }
+
+.register-here-button {
+    display: grid;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.login-text-field {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 45px;
+}
+
+.login-title{
+    font-family: 'Sarina', cursive;
+}
+.whole-login-div {
+    margin-top: 100px;
+}
