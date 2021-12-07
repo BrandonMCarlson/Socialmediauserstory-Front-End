@@ -17,7 +17,7 @@ import AboutMe from "../AboutMe";
 
 
 
-const Profile = ({ getFriends, getAProfile, updateAboutMe, user, profile, setProfile }) => {
+const Profile = ({ getFriends, getAProfile, user, setUser, profile, setProfile }) => {
   const [value, setValue] = React.useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -38,7 +38,7 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user, profile, setPro
             <AddToPhotosIcon fontSize="medium"></AddToPhotosIcon>
           </button>
           <p></p>
-         <AboutMe profile={profile}/>
+         <AboutMe profile={profile} user={user} setUser={setUser}/>
           
         </div>
 
