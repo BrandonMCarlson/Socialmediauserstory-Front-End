@@ -12,7 +12,8 @@ import "./Profile.css";
 import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import PeopleIcon from '@mui/icons-material/People';
-import NotificationImportantIcon from '@mui/icons-material/NotificationImportant';
+import Post from "../Post";
+
 
 
 
@@ -45,6 +46,7 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
 
         <div>
           <input type="text" />
+          <Post/>
         </div>
         <div>
           <div>
@@ -52,7 +54,7 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
               <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                   <TabList onChange={handleChange} aria-label="lab API tabs example">
-                    
+
                     <Tab label="Home" value="1" />
                     <Tab label="Friends" value="2" />
                     <Tab  label="Notifications" value="3" /> 

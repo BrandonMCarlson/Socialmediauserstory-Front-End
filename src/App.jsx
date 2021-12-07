@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import Post from "./components/Post";
 import { Route, Routes } from "react-router";
 import jwtDecode from "jwt-decode";
 import Welcome from "./components/pages/Welcome";
