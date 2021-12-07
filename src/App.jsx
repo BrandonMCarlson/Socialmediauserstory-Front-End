@@ -86,23 +86,6 @@ const getAllUsers = async () => {
       })
   }
 
-  const updateAboutMe = async () => {
-    await axios
-      .put(`http://localhost:5000/api/users/61aad32098c81a5fe8132bbc`, {
-            firstName: user.firstName,
-            lastName: user.lastName,
-            aboutMe: "update from FRONTEND 2",
-            email: user.email,
-            password: user.password,
-      }, 
-      { headers: { 'x-auth-token': localStorage.getItem('token') } })
-      .then((res) => {
-        setUser(res.data);
-        console.log(user);
-      });
-  }
-
-
   useEffect(() => {
     getAllUsers();
   }, []);
