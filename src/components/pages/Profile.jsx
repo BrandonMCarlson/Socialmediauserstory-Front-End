@@ -39,8 +39,7 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user, profile, setPro
             <AddToPhotosIcon fontSize="medium"></AddToPhotosIcon>
           </button>
           <p></p>
-          <button className="our-button" onClick={() => updateAboutMe()}>UPDATE ABOUT ME </button>
-          <button className="our-button"><AppRegistrationIcon fontSize="medium"></AppRegistrationIcon></button>
+          <span>About ME!</span><span><button onClick={() => updateAboutMe()} className="our-button"><AppRegistrationIcon  fontSize="medium"></AppRegistrationIcon></button></span>
           
         </div>
 

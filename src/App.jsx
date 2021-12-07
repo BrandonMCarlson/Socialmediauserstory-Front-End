@@ -120,7 +120,7 @@ const getAllUsers = async () => {
         <Routes>
           <Route path="/" element={<Login setUser={setUser} setProfile={setProfile}  />}></Route>
           <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
-          <Route path="profile" element={<Profile user={user} setProfile={setProfile} profile={profile} updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
+          <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>
       </main>
    
