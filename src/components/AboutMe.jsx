@@ -41,7 +41,7 @@ const AboutMe = ({ user, setUser, profile }) => {
           id="aboutMe"
           label="About Me"
           multiline
-          rows={4}
+          
           defaultValue={profile.aboutMe}
           onChange={(event) => handleChange(event)}
           name="aboutMe"

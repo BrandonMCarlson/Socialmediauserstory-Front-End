@@ -26,3 +26,16 @@
 .tabs {
     margin-right: 10px;
 }
+
+.PrivateTabIndicator-colorSecondary-7 {
+    background-color: #717171!important;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input {
+    width: 275px!important;
+}
+.css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+    opacity: 1;
+    width: 275px!important;
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
+}
