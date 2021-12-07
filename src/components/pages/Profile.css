@@ -13,3 +13,12 @@
     background-color: rgb(242, 180, 99);
     height: 500px;
 }
+
+.icon-tab-style {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.text-tab-style {
+    padding-top: 6px;
+}

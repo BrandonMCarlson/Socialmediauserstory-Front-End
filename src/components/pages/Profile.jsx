@@ -56,7 +56,8 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
                   <TabList onChange={handleChange} aria-label="lab API tabs example">
 
                     <Tab label="Home" value="1" />
-                    <Tab label="Friends" value="2" />
+                    <Tab label={ <div className={"icon-tab-style"}><PeopleIcon
+                  fontSize="large"/><div className="text-tab-style">Friends</div></div>} value="2" />
                     <Tab  label="Notifications" value="3" /> 
                     
                   </TabList>
@@ -64,8 +65,8 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
                 <TabPanel value="1">Item One</TabPanel>
                 <TabPanel value="2">
                   <PeopleIcon
-                  fontSize="large">
-                  </PeopleIcon>
+                  fontSize="large"/>
+                 
                   <button className="our-button" onClick={() => getFriends()}>
                     FRIENDS IN CONSOLE
                   </button>
