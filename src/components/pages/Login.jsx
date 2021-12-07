@@ -6,7 +6,7 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 
 
-const Login = ({setUser}) => {
+const Login = ({setUser, setProfile}) => {
     
     const navigate = useNavigate();
 
@@ -20,6 +20,7 @@ const Login = ({setUser}) => {
               localStorage.setItem("token", res.data);
               const user = jwtDecode(localStorage.getItem("token"));
               setUser(user);
+              setProfile(user);
               navigate("/profile");
             })
             .catch((error) => console.log(error));

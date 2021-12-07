@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Icon } from '@mui/material';
 import GroupsIcon from '@mui/icons-material/Groups';
+import useForm from '../useForm';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,7 +54,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar({setSearchText}) {
+
+  const handleChange = (event) => {
+    event.persist();
+    setSearchText(event.target.value);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -79,7 +86,10 @@ export default function NavBar() {
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
+              type="search"
+              name="search"
+              onChange={(event)=>handleChange(event)}
             />
           </Search>
         </Toolbar>

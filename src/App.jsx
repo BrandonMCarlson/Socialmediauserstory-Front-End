@@ -113,13 +113,13 @@ const getAllUsers = async () => {
   return (
     <div className="App">
       
-    <NavBar />
+    <NavBar setSearchText={setSearchText}/>
     <SearchBox allUsers={allUsers} setProfile={setProfile} searchText={searchText}/>
     
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
-          <Route path="login" element={<Login setUser={setUser} />}></Route>
+          <Route path="login" element={<Login setUser={setUser} setProfile={setProfile} />}></Route>
           <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
           <Route path="profile" element={<Profile user={user} updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>

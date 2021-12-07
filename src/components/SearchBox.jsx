@@ -11,7 +11,7 @@ const SearchBox = ({searchText, setProfile, allUsers}) => {
             profile.firstName.toLowerCase().includes(searchText.toLowerCase()) ||
             profile.lastName.toLowerCase().includes(searchText.toLowerCase())
             ? (
-              <li onClick={setProfile(profile._id)} className="search-box btn btn-primary btn:hover" key={index}>{profile.firstName}  {profile.lastName}</li>
+              <li onClick={()=>setProfile(profile)} className="search-box btn btn-primary btn:hover" key={index}>{profile.firstName}  {profile.lastName}</li>
             ) : null
           )}
         </ul>

@@ -19,6 +19,7 @@ ul{
     color: #0b2540;
     background-color: #9c913f;
     border-color: #9c913f;
+    cursor: pointer;
 }
 
 .btn-primary {
