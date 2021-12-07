@@ -45,6 +45,7 @@ const getAllUsers = async () => {
     localStorage.removeItem("token");
     setUser(null);
     navigate("/");
+    window.location.reload(true);
     console.log(localStorage.getItem("token"));
   };
 
