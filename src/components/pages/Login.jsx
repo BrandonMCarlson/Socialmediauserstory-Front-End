@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router";
+import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom"
 import Button from "../Button";
 import useForm from "../../useForm";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import {Link} from "react-router-dom";
 
 
 const Login = ({setUser}) => {
-       
+    
+    const navigate = useNavigate();
 
     const loginUser = async () => {
         await axios
@@ -20,6 +20,7 @@ const Login = ({setUser}) => {
               localStorage.setItem("token", res.data);
               const user = jwtDecode(localStorage.getItem("token"));
               setUser(user);
+              navigate("/profile");
             })
             .catch((error) => console.log(error));
       };
