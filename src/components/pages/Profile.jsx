@@ -24,6 +24,7 @@ const Profile = ({
   setProfile,
 }) => {
   const [value, setValue] = React.useState("1");
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -40,17 +41,7 @@ const Profile = ({
         </div>
 
         <div>
-          <TextField
-            id="post"
-            label="Post Something"
-            multiline
-            InputLabelProps={{ shrink: true }}
-            defaultValue={profile.aboutMe}
-            onChange={(event) => handleChange(event)}
-            name="aboutMe"
-            disabled
-          />
-          <Post />
+          <Post profile={profile}/>
         </div>
         <div>
           <div className="tabs">

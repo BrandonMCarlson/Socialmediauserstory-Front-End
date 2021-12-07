@@ -97,3 +97,15 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
 .cat-reg-img {
     border-radius: 20px;
 }
+
+.post-text-field {
+    display: grid;
+    justify-content: center;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    display: flex!important;
+    margin-right: 20px!important;
+    margin-left: 20px!important;
+ 
+}

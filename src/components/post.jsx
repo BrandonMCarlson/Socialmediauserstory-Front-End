@@ -5,10 +5,29 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import TextField from "@mui/material/TextField";
 
-export default function Post() {
+export default function Post({profile}) {
+
+ 
   return (
-    <Timeline>
+    <div>
+        <div>
+        <TextField
+            className="post-text-field"
+            id="post"
+            label="Post Something"
+            multiline
+            InputLabelProps={{ shrink: true }}
+            defaultValue={profile.aboutMe}
+            
+            name="aboutMe"
+            disabled
+          />
+        </div>
+        
+        <div>
+        <Timeline>
       <TimelineItem>
         <TimelineSeparator>
           <TimelineDot />
@@ -30,5 +49,8 @@ export default function Post() {
         <TimelineContent>Sleep</TimelineContent>
       </TimelineItem>
     </Timeline>
+        </div>
+    </div>
+ 
   );
 }
