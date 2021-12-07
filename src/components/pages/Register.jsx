@@ -11,5 +11,5 @@ const Register = ({registerUser}) => {
         </div>
      );
 }
- 
+
 export default Register;

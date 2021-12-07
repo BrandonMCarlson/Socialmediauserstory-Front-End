@@ -9,6 +9,7 @@ import TabContext from '@material-ui/lab/TabContext';
 import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
 import "./Profile.css";
+import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
 
 
 
@@ -28,7 +29,10 @@ const Profile = ({getFriends, getAProfile, updateAboutMe, user}) => {
                 <div>
                   <h1>{user.firstName}</h1>
                   <img src={`http://localhost:5000/${user.image}`} alt={`${user.firstName}'s photos'`} />
-                  <button>Upload Photo</button>
+                  <button><AddToPhotosIcon
+                        fontSize ="medium">
+                        </AddToPhotosIcon>
+                  </button>
                   <p></p>
                   <button onClick={()=>updateAboutMe()}>UPDATE ABOUT ME</button>
                 </div>
