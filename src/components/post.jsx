@@ -29,6 +29,7 @@ export default function Post({profile}) {
         </div>
         
         <div>
+        <div>
         <Timeline>
       <TimelineItem>
         <TimelineSeparator>
