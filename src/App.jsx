@@ -121,7 +121,7 @@ const getAllUsers = async () => {
         </Routes>
       </main>
     <footer>
-      <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>
+      {!user ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
     </footer>
     </div>
   );
