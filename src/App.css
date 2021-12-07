@@ -25,5 +25,13 @@ ul{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 14px;
+    margin-bottom: 14px;
+}
+
 
 

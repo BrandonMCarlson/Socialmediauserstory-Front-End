@@ -6,10 +6,14 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TextField from "@mui/material/TextField";
+import useForm from '../useForm';
 
 export default function Post({profile}) {
 
- 
+
+
+  const { formValue, handleChange, handleSubmit, setFormValue } = useForm();
+
   return (
     <div>
         <div>
@@ -18,9 +22,7 @@ export default function Post({profile}) {
             id="post"
             label="Post Something"
             multiline
-            InputLabelProps={{ shrink: true }}
-            defaultValue={profile.aboutMe}
-            
+            InputLabelProps={{ shrink: true }}           
             name="aboutMe"
             disabled
           />

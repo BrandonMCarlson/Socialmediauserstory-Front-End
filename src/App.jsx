@@ -10,6 +10,7 @@ import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import NavBar from "./components/NavBar";
 import SearchBox from "./components/SearchBox";
+import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 
 function App() {
   const [user, setUser] = useState([]);
@@ -29,11 +30,7 @@ function App() {
   
 const [data, setData] = React.useState(initialState);
 
-const handleChange = (event) => {
-  setData({...data, 
-    [event.target.name]: event.target.value });
-    // console.log(data)
-};
+
 
 const getAllUsers = async () => {
   await axios
@@ -123,7 +120,9 @@ const getAllUsers = async () => {
           <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>
       </main>
-   
+    <footer>
+      <MeetingRoomIcon fontSize="large"/>
+    </footer>
     </div>
   );
 }
