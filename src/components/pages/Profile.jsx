@@ -30,6 +30,9 @@ const Profile = ({getFriends, getAProfile, updateAboutMe, user}) => {
                   <img src={`http://localhost:5000/${user.image}`} alt={`${user.firstName}'s photos'`} />
                   <button>Upload Photo</button>
                   <p></p>
+                  <div className="profile-feed">
+                     {user.aboutMe}
+                  </div>
                   <button onClick={()=>updateAboutMe()}>UPDATE ABOUT ME</button>
                 </div>
              
@@ -39,6 +42,10 @@ const Profile = ({getFriends, getAProfile, updateAboutMe, user}) => {
                     
 
                     <input type="text" />
+                    <p></p>
+                    <div className="profile-feed" >
+                          hi
+                    </div>
 
              
                 </div>
