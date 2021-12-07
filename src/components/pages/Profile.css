@@ -39,3 +39,14 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
     width: 275px!important;
     -webkit-text-fill-color: rgba(0, 0, 0, 0.38);
 }
+
+.about-me-button {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin-left: 1px;
+    margin-top: 0px;
+    padding: 7px;
+    padding-left: 9px;
+    padding-right: 9px;
+}

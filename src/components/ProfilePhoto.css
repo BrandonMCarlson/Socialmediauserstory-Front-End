@@ -1,0 +1,16 @@
+.photo-style {
+    margin-bottom: -10px;
+    border-radius: 15%;
+    margin-left: 14px;
+}
+
+.add-photo-button {
+    margin-left: 4pxpx;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin-top: 0px;
+    padding: 7px;
+    padding-left: 9px;
+    padding-right: 9px;
+}

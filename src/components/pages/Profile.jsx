@@ -7,11 +7,10 @@ import TabContext from "@material-ui/lab/TabContext";
 import TabList from "@material-ui/lab/TabList";
 import TabPanel from "@material-ui/lab/TabPanel";
 import "./Profile.css";
-import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
-import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import PeopleIcon from '@mui/icons-material/People';
 import Post from "../Post";
 import AboutMe from "../AboutMe";
+import ProfilePhoto from "../ProfilePhoto";
 
 
 
@@ -29,14 +28,7 @@ const Profile = ({ getFriends, getAProfile, user, setUser, profile, setProfile }
       <h1>Profile</h1>
       <div className="profile-page-grid">
         <div>
-          <h1>{profile.firstName}</h1>
-          <img
-            src={`http://localhost:5000/${profile.image}`}
-            alt={`${profile.firstName}'s photos'`}
-          />
-          <button className="our-button">
-            <AddToPhotosIcon fontSize="medium"></AddToPhotosIcon>
-          </button>
+          <ProfilePhoto profile={profile}/>
           <p></p>
          <AboutMe profile={profile} user={user} setUser={setUser}/>
           
