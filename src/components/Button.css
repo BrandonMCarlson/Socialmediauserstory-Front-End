@@ -24,7 +24,7 @@
 
 .grid-buttons {
     display: grid;
-    grid-template-columns: 15% 15% 15% 15%;
+    grid-template-columns: 15% 15% 15%;
     justify-items: center;
     align-items: center;
     justify-content: center;

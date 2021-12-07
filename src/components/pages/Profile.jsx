@@ -1,8 +1,6 @@
-import userEvent from "@testing-library/user-event";
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router";
 import Button from "../Button";
-import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Tab from "@material-ui/core/Tab";
 import TabContext from "@material-ui/lab/TabContext";
@@ -13,6 +11,7 @@ import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import PeopleIcon from '@mui/icons-material/People';
 import Post from "../Post";
+import AboutMe from "../AboutMe";
 
 
 
@@ -39,7 +38,7 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user, profile, setPro
             <AddToPhotosIcon fontSize="medium"></AddToPhotosIcon>
           </button>
           <p></p>
-          <span>About ME!</span><span><button onClick={() => updateAboutMe()} className="our-button"><AppRegistrationIcon  fontSize="medium"></AppRegistrationIcon></button></span>
+         <AboutMe profile={profile}/>
           
         </div>
 
