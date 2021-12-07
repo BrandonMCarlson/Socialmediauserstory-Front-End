@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import axios from "axios";
 import useForm from "../useForm";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 const AboutMe = ({ user, setUser, profile }) => {
