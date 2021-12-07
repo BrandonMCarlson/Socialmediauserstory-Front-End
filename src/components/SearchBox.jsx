@@ -3,10 +3,10 @@ import "./SearchBox.css";
 
 const SearchBox = ({searchText, setProfile, allUsers}) => {
   return (
-    <div>
+    <div className="ul-div">
       {" "}
       {searchText === "" ? null : (
-        <ul>
+        <ul className="search-ul">
           {allUsers.map((profile, index) =>
             profile.firstName.toLowerCase().includes(searchText.toLowerCase()) ||
             profile.lastName.toLowerCase().includes(searchText.toLowerCase())

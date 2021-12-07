@@ -49,7 +49,7 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user, profile, setPro
           <Post/>
         </div>
         <div>
-          <div>
+          <div className="tabs">
             <Box sx={{ width: "100%", typography: "body1" }}>
               <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

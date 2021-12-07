@@ -1,12 +1,15 @@
 
-ul{
+.search-ul{
     list-style-type: none;
     color: #9f9f9f;
-    display: block
+    display: block;
+    background-color: #3b8ad9;
+    margin-top: 0px;
+    border-bottom-left-radius: 20px;
+    padding-right: 14px;
 }
 .search-box {
     margin-top: 0rem;
-    margin-bottom: 1rem;
     -webkit-backdrop-filter: blur(21px) brightness(1.2);
     backdrop-filter: blur(21px) brightness(1.2);
     margin-left: 0rem;
@@ -25,9 +28,15 @@ ul{
 .btn-primary {
     color: #9f9f9f;
     font-weight: bolder;
-    background-color: #0d6dfd00;
-    border-color: #0d6dfd00;
+    background-color: #3b8ad9;
     display: table;
-    -webkit-backdrop-filter: blur(6px) brightness(3);
-    backdrop-filter: blur(6px) brightness(3);
+    padding: 15px;
+    border-radius: 10px;
+}
+.ul-div {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    z-index: 1;   
 }
