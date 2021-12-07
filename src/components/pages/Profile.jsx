@@ -62,11 +62,10 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
                     
                   </TabList>
                 </Box>
-                <TabPanel value="1">Item One</TabPanel>
-                <TabPanel value="2">
-                  <PeopleIcon
-                  fontSize="large"/>
-                 
+                <TabPanel value="1">
+                  Item One
+                </TabPanel>
+                <TabPanel value="2">                 
                   <button className="our-button" onClick={() => getFriends()}>
                     FRIENDS IN CONSOLE
                   </button>
@@ -75,7 +74,9 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
                     PROFILE IN CONSOLE
                   </button>
                 </TabPanel>
-                <TabPanel value="3">Item Three</TabPanel> 
+                <TabPanel value="3">
+                  Item Three
+                </TabPanel> 
                 
               </TabContext>
             </Box>

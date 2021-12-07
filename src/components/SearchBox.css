@@ -1,0 +1,32 @@
+
+ul{
+    list-style-type: none;
+    color: #9f9f9f;
+    display: block
+}
+.search-box {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    -webkit-backdrop-filter: blur(21px) brightness(1.2);
+    backdrop-filter: blur(21px) brightness(1.2);
+    margin-left: 0rem;
+    
+    align-self: flex-start;
+    justify-self: flex-end;
+}
+
+.btn:hover{
+    color: #0b2540;
+    background-color: #9c913f;
+    border-color: #9c913f;
+}
+
+.btn-primary {
+    color: #9f9f9f;
+    font-weight: bolder;
+    background-color: #0d6dfd00;
+    border-color: #0d6dfd00;
+    display: table;
+    -webkit-backdrop-filter: blur(6px) brightness(3);
+    backdrop-filter: blur(6px) brightness(3);
+}
