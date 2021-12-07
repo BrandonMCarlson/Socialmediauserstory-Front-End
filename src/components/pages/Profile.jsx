@@ -18,7 +18,7 @@ import Post from "../Post";
 
 
 
-const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
+const Profile = ({ getFriends, getAProfile, updateAboutMe, user, profile, setProfile }) => {
   const [value, setValue] = React.useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -30,10 +30,10 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
       <h1>Profile</h1>
       <div className="profile-page-grid">
         <div>
-          <h1>{user.firstName}</h1>
+          <h1>{profile.firstName}</h1>
           <img
-            src={`http://localhost:5000/${user.image}`}
-            alt={`${user.firstName}'s photos'`}
+            src={`http://localhost:5000/${profile.image}`}
+            alt={`${profile.firstName}'s photos'`}
           />
           <button className="our-button">
             <AddToPhotosIcon fontSize="medium"></AddToPhotosIcon>
@@ -55,16 +55,13 @@ const Profile = ({ getFriends, getAProfile, updateAboutMe, user }) => {
                 <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                   <TabList onChange={handleChange} aria-label="lab API tabs example">
 
-                    <Tab label="Home" value="1" />
+                    <Tab label="Home" value="1" onClick={()=>setProfile(user)}/>
                     <Tab label={ <div className={"icon-tab-style"}><PeopleIcon
                   fontSize="large"/><div className="text-tab-style">Friends</div></div>} value="2" />
                     <Tab  label="Notifications" value="3" /> 
                     
                   </TabList>
                 </Box>
-                <TabPanel value="1">
-                  Item One
-                </TabPanel>
                 <TabPanel value="2">                 
                   <button className="our-button" onClick={() => getFriends()}>
                     FRIENDS IN CONSOLE
