@@ -1,27 +1,27 @@
 body {
   background: cover;
-  background-color: #7FC3B0;
+  background-image: linear-gradient(to right top,#1fff88, #3b8ad9);
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-top: 0px;
   margin-left: 0px;
 }
 
 .App {
-  background-color: #7FC3B0;
+  
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 li{
-  background-color: #7FC3B0;
+  
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 ul{
-  background-color: #7FC3B0;
+ 
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .div{
-  background-color: #7FC3B0;
+  
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

@@ -15,11 +15,20 @@
 	text-shadow:0px 1px 0px #070707;
 }
 .our-button:hover {
-	background-color:#030303;
+	background-color:#484848;
 }
 .our-button:active {
 	position:relative;
 	top:1px;
+}
+
+.grid-buttons {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15%;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 

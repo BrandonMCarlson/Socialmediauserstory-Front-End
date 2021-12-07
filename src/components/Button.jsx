@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import Buttoncss from "../components/Button.css";
+import "../components/Button.css";
 
 const Button = () => {
     return ( 
-        <div>
+        <div className="grid-buttons">
             <Link to="/"><button className="our-button">Welcome Page</button></Link>
             <Link to="/register"><button className="our-button">Register Page</button></Link>
             <Link to="/login"><button className="our-button">Login Page</button></Link>
