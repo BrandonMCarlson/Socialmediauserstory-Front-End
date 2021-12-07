@@ -10,6 +10,10 @@ const AboutMe = ({ user, setUser, profile }) => {
     document.getElementById("aboutMe").disabled = false;
   };
 
+  useEffect(() => {
+    
+  }, [profile._id]);
+
   const updateAboutMe = async () => {
     await axios
       .put(
@@ -41,7 +45,7 @@ const AboutMe = ({ user, setUser, profile }) => {
           id="aboutMe"
           label="About Me"
           multiline
-          
+          InputLabelProps={{ shrink: true }}
           defaultValue={profile.aboutMe}
           onChange={(event) => handleChange(event)}
           name="aboutMe"
