@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Post from "./components/Post";
-import { Route, Routes } from "react-router";
 import jwtDecode from "jwt-decode";
 import Welcome from "./components/pages/Welcome";
 import Profile from "./components/pages/Profile";
@@ -29,7 +29,7 @@ function App() {
   };
   
 const [data, setData] = React.useState(initialState);
-
+const navigate = useNavigate();
 
 
 const getAllUsers = async () => {
@@ -65,6 +65,7 @@ const getAllUsers = async () => {
     console.log(localStorage.getItem("token"));
     localStorage.removeItem("token");
     setUser(null);
+    navigate("/");
     console.log(localStorage.getItem("token"));
   };
 
@@ -121,7 +122,7 @@ const getAllUsers = async () => {
         </Routes>
       </main>
     <footer>
-      <MeetingRoomIcon fontSize="large"/>
+      <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>
     </footer>
     </div>
   );
