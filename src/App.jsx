@@ -25,7 +25,6 @@ function App() {
       email: "",
     password: "",
     confirmPassword: "",
-    
   };
   
 const [data, setData] = React.useState(initialState);

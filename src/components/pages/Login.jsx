@@ -4,7 +4,6 @@ import useForm from "../../useForm";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import TextField from "@mui/material/TextField";
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import catCig from  "../../images/cat-cig.jpg";
 import catReg from "../../images/cat-register.jpg";
@@ -36,7 +35,11 @@ const Login = ({setUser, setProfile}) => {
         handleSubmit,       
         setFormValue,       
       } = useForm(loginUser);
-   
+      
+      useEffect(() => {
+
+      }, []);
+
     return ( 
         <div className="whole-login-div">
            <div className="cat-reg-div">

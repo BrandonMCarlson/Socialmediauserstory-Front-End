@@ -109,3 +109,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
     margin-left: 20px!important;
  
 }
+
+.MuiButtonBase-root {
+    -moz-appearance: none;
+}
