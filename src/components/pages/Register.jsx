@@ -78,5 +78,5 @@ const Register = ({registerUser, firstName, lastName, email, password, confirmPa
        
      );
 }
- 
+
 export default Register;
