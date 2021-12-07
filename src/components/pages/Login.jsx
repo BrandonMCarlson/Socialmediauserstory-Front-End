@@ -4,6 +4,7 @@ import Button from "../Button";
 import useForm from "../../useForm";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
+import TextField from "@mui/material/TextField";
 
 
 const Login = ({setUser, setProfile}) => {
@@ -37,13 +38,16 @@ const Login = ({setUser, setProfile}) => {
         <div>
             <Button/>
            <h1>Login Page</h1>
-            <form>
-                <input name="email" type="text" onChange={(event)=>handleChange(event)} placeholder="E-mail"/>
-                <p></p>
-                <input name="password" type="password" onChange={(event)=>handleChange(event)} placeholder="Password"/>
-                <p></p>
-                <button type="subbmit" onClick={(event)=>handleSubmit(event)}>Login Here</button>
-            </form>
+            <div>
+              <form>
+                  <TextField id="outlined-basic" name="email" label="E-mail" onChange={(event)=>handleChange(event)} variant="outlined" />
+                  <p></p>
+                  <TextField id="outlined-basic" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" />
+                  <p></p>
+                  <button type="subbmit" onClick={(event)=>handleSubmit(event)}>Login Here</button>
+              </form>
+            </div>
+            
 
             <Link to="/register"><button>Register Page</button></Link>
         </div>
