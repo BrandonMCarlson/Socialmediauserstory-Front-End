@@ -9,9 +9,11 @@ import Profile from "./components/pages/Profile";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import NavBar from "./components/NavBar";
+import SearchBox from "./components/SearchBox";
 
 function App() {
   const [user, setUser] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
   const [friends, setFriends] = useState([]);
   const [profile, setProfile] = useState({});
   const [searchText, setSearchText] = useState("");
@@ -33,12 +35,13 @@ const handleChange = (event) => {
     // console.log(data)
 };
 
-const handleConfirmPassword = () => {
-  // event.target.name = event.target.value;
-  if (data.confirmPassword !== data.password) {
-    alert('Password is Mismatched')
-    return false
-  }
+const getAllUsers = async () => {
+  await axios
+    .get("http://localhost:5000/api/users")
+    .then((res) => {
+      setAllUsers(res.data);
+      console.log(res.data);
+    })
 }
 
   const registerUser = async () => {
@@ -60,20 +63,6 @@ const handleConfirmPassword = () => {
     console.log(user);
   };
 
-  const loginUser = async () => {
-    debugger
-    await axios
-        .post("http://localhost:5000/api/auth", {
-          email: "cust3@cust3.com",
-          password: "cust3",
-        })
-        .then((res) => {
-          localStorage.setItem("token", res.data);
-          const user = jwtDecode(localStorage.getItem("token"));
-          setUser(user);
-        })
-        .catch((error) => console.log(error));
-  };
 
    const logoutUser = async () => {
     console.log(localStorage.getItem("token"));
@@ -117,19 +106,20 @@ const handleConfirmPassword = () => {
   }
 
 
-  // useEffect(() => {
-
-  // }, [user]);
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
   return (
     <div className="App">
       
-    <NavBar/>
+    <NavBar />
+    <SearchBox allUsers={allUsers} setProfile={setProfile} searchText={searchText}/>
     
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
-          <Route path="login" element={<Login loginUser={loginUser} setUser={setUser} />}></Route>
+          <Route path="login" element={<Login setUser={setUser} />}></Route>
           <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
           <Route path="profile" element={<Profile user={user} updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router";
+import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom"
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import useForm from "../../useForm";
@@ -7,7 +7,9 @@ import Button from "../Button";
 import "../styles/register.css"
 
 const Register = ({user, setUser}) => {
-    
+  
+  const navigate = useNavigate();  
+
   const registerUser = async () => {
     if (formValue.password !== formValue.confirmPassword) {
       alert("Passwords do not match!");
@@ -24,6 +26,7 @@ const Register = ({user, setUser}) => {
         localStorage.setItem("token", res.headers["x-auth-token"]);
         const user = jwtDecode(localStorage.getItem("token"));
         setUser(user);
+        navigate("/profile");
         console.log("token", res.headers["x-auth-token"]);
       })
       .catch((error) => console.log(error));
