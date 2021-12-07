@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router";
 import Button from "../Button";
-import "../styles/register.css"
+import "../styles/register.css";
 
-const Register = ({registerUser, firstName, lastName, email, password, confirmPassword, handleChange, handleConfirmPassword }) => {
-    return ( 
-        <div>
-            <form onSubmit={()=>registerUser()}>
-            <h1>Register Below</h1><br/><br/>
-            <div className="form-group">
+const Register = ({
+  registerUser,
+  firstName,
+  lastName,
+  email,
+  password,
+  confirmPassword,
+  handleChange,
+  handleConfirmPassword,
+}) => {
+  return (
+    <div>
+      <form onSubmit={() => registerUser()}>
+        <h1>Register Below</h1>
+        <br />
+        <br />
+        <div className="form-group">
           <label htmlFor="firstname">First Name</label>
           <input
             autoFocus
@@ -45,8 +56,8 @@ const Register = ({registerUser, firstName, lastName, email, password, confirmPa
             aria-describedby="emailHelp"
             required
           />
-          </div>
-          
+        </div>
+
         <div className="form-group">
           <label htmlFor="password">Create Password</label>
           <input
@@ -71,12 +82,11 @@ const Register = ({registerUser, firstName, lastName, email, password, confirmPa
             id="password"
             required
           />
-            </div>
-            <button type="submit">Sign Up</button>
-            </form>
         </div>
-       
-     );
-}
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  );
+};
 
 export default Register;
