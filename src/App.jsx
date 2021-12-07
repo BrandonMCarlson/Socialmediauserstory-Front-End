@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import MainHeader from "./components/MainHeader";
+
 import { Route, Routes } from "react-router";
 import jwtDecode from "jwt-decode";
 import Welcome from "./components/pages/Welcome";
@@ -13,14 +13,40 @@ function App() {
   const [user, setUser] = useState([]);
   const [friends, setFriends] = useState([]);
   const [profile, setProfile] = useState({});
+  
+  const initialState = {
+    firstname: "",
+      lastname: "",
+      email: "",
+    password: "",
+    confirmPassword: "",
+    
+  };
+  
+const [data, setData] = React.useState(initialState);
+
+const handleChange = (event) => {
+  setData({...data, 
+    [event.target.name]: event.target.value });
+    // console.log(data)
+};
+
+const handleConfirmPassword = () => {
+  // event.target.name = event.target.value;
+  if (data.confirmPassword !== data.password) {
+    alert('Password is Mismatched')
+    return false
+  }
+}
 
   const registerUser = async () => {
     await axios
       .post("http://localhost:5000/api/users/register", {
-        firstName: "Cust3",
-        lastName: "Cust3",
-        email: "cust3@cust3.com",
-        password: "cust3",
+        firstName: data.firstname,
+        lastName: data.lastname,
+        email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword
       })
       .then((res) => {
         localStorage.setItem("token", res.headers["x-auth-token"]);
@@ -95,14 +121,15 @@ function App() {
 
   return (
     <div className="App">
-      hi
-    <button onClick={()=>registerUser()}>REGISTER USER</button><button onClick={()=>logoutUser()}>LOG OUT</button>
-      <MainHeader />
+      
+
+    
+     
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
           <Route path="login" element={<Login loginUser={loginUser} />}></Route>
-          <Route path="register" element={<Register registerUser={registerUser} />}></Route>
+          <Route path="register" element={<Register registerUser={registerUser} handleChange={handleChange} handleConfirmPassword={handleConfirmPassword} firstName={data.firstname} lastName={data.lastname} email={data.email} password={data.password} confirmPassword={data.confirmPassword} />}></Route>
           <Route path="profile" element={<Profile updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
         </Routes>
       </main>
