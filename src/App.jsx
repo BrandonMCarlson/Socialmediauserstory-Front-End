@@ -14,6 +14,7 @@ function App() {
   const [user, setUser] = useState([]);
   const [friends, setFriends] = useState([]);
   const [profile, setProfile] = useState({});
+  const [searchText, setSearchText] = useState("");
   
   const initialState = {
     firstname: "",
