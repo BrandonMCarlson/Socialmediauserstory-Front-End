@@ -40,26 +40,6 @@ const getAllUsers = async () => {
     })
 }
 
-  const registerUser = async () => {
-    await axios
-      .post("http://localhost:5000/api/users/register", {
-        firstName: data.firstname,
-        lastName: data.lastname,
-        email: data.email,
-        password: data.password,
-        confirmPassword: data.confirmPassword
-      })
-      .then((res) => {
-        localStorage.setItem("token", res.headers["x-auth-token"]);
-        const user = jwtDecode(localStorage.getItem("token"));
-        setUser(user);
-        console.log("token", res.headers["x-auth-token"]);
-      })
-      .catch((error) => console.log(error));
-    console.log(user);
-  };
-
-
    const logoutUser = async () => {
     console.log(localStorage.getItem("token"));
     localStorage.removeItem("token");
