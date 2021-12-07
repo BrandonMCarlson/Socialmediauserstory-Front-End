@@ -128,15 +128,9 @@ const handleConfirmPassword = () => {
       <main>
         <Routes>
           <Route path="/" element={<Welcome />}></Route>
-<<<<<<< HEAD
-          <Route path="login" element={<Login loginUser={loginUser} />}></Route>
-          <Route path="register" element={<Register registerUser={registerUser} handleChange={handleChange} handleConfirmPassword={handleConfirmPassword} firstName={data.firstname} lastName={data.lastname} email={data.email} password={data.password} confirmPassword={data.confirmPassword} />}></Route>
-          <Route path="profile" element={<Profile updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
-=======
           <Route path="login" element={<Login loginUser={loginUser} setUser={setUser} />}></Route>
           <Route path="register" element={<Register registerUser={registerUser} />}></Route>
           <Route path="profile" element={<Profile user={user} updateAboutMe={updateAboutMe} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
->>>>>>> 3e6460cd242abefe16fc3f55610988c4c5aa551b
         </Routes>
       </main>
    

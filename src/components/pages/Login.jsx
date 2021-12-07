@@ -6,9 +6,6 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 import {Link} from "react-router-dom";
 
-<<<<<<< HEAD
-const Login = ({loginUser, logoutUser, registerUser}) => {
-=======
 
 const Login = ({setUser}) => {
        
@@ -34,14 +31,9 @@ const Login = ({setUser}) => {
         setFormValue,       
       } = useForm(loginUser);
    
->>>>>>> 3e6460cd242abefe16fc3f55610988c4c5aa551b
     return ( 
         <div>
             <Button/>
-<<<<<<< HEAD
-            <button onClick={()=>loginUser()}>Login Here</button>
-            <button onClick={()=>registerUser()}>REGISTER USER</button><button onClick={()=>logoutUser()}>LOG OUT</button>
-=======
            <h1>Login Page</h1>
             <form>
                 <input name="email" type="text" onChange={(event)=>handleChange(event)} placeholder="E-mail"/>
@@ -52,7 +44,6 @@ const Login = ({setUser}) => {
             </form>
 
             <Link to="/register"><button>Register Page</button></Link>
->>>>>>> 3e6460cd242abefe16fc3f55610988c4c5aa551b
         </div>
      );
 }
