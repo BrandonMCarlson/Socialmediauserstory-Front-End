@@ -8,6 +8,8 @@ import TabList from "@material-ui/lab/TabList";
 import TabPanel from "@material-ui/lab/TabPanel";
 import "./Profile.css";
 import PeopleIcon from '@mui/icons-material/People';
+import HomeIcon from '@mui/icons-material/Home';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import Post from "../Post";
 import AboutMe from "../AboutMe";
 import ProfilePhoto from "../ProfilePhoto";
@@ -45,10 +47,12 @@ const Profile = ({ getFriends, getAProfile, user, setUser, profile, setProfile }
                 <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                   <TabList onChange={handleChange} aria-label="lab API tabs example">
 
-                    <Tab label="Home" value="1" onClick={()=>setProfile(user)}/>
+                    <Tab label={ <div className={"icon-tab-style"}><HomeIcon
+                  fontSize="large"/><div className="text-tab-style"><b>Home</b></div></div>} value="1" />
                     <Tab label={ <div className={"icon-tab-style"}><PeopleIcon
-                  fontSize="large"/><div className="text-tab-style">Friends</div></div>} value="2" />
-                    <Tab  label="Notifications" value="3" /> 
+                  fontSize="large"/><div className="text-tab-style"><b>Friends</b></div></div>} value="2" />
+                    <Tab  label={ <div className={"icon-tab-style"}><NotificationsIcon
+                  fontSize="large"/><div className="text-tab-style notifiactions-image-text"><b>Noitifications</b></div></div>} value="3" />
                     
                   </TabList>
                 </Box>

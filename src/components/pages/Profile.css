@@ -16,7 +16,7 @@
 
 .icon-tab-style {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 30% 80%;
 }
 
 .text-tab-style {
@@ -54,4 +54,8 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     margin-left: 14px!important;
+}
+
+.notifiactions-image-text {
+    margin-left: -12px;
 }
