@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from "react";
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -54,7 +54,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar({setSearchText}) {
+export default function NavBar({setSearchText, profile}) {
+
+  useEffect(() => {
+    setSearchText("");
+  }, [profile._id]);
 
   const handleChange = (event) => {
     event.persist();
@@ -89,6 +93,7 @@ export default function NavBar({setSearchText}) {
               inputProps={{ "aria-label": "search" }}
               type="search"
               name="search"
+              id="search"
               onChange={(event)=>handleChange(event)}
             />
           </Search>

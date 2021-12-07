@@ -113,7 +113,7 @@ const getAllUsers = async () => {
   return (
     <div className="App">
       
-    <NavBar setSearchText={setSearchText}/>
+    <NavBar setSearchText={setSearchText} profile={profile}/>
     <SearchBox allUsers={allUsers} setProfile={setProfile} searchText={searchText}/>
     
       <main>

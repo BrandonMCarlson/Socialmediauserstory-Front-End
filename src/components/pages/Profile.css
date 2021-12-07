@@ -84,8 +84,14 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
 
 .cat-reg-div {
     transform: rotate(20deg);
-    margin-left: 120px;
-    margin-top: 115px;
+    margin-left: 147px;
+    margin-top: 123px;
+}
+
+.cat-cig-div {
+    transform: rotate(-20deg);
+    margin-left: -1px;
+    margin-top: 84px;
 }
 
 .cat-reg-img {

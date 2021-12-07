@@ -40,7 +40,7 @@ const Login = ({setUser, setProfile}) => {
     return ( 
         <div className="whole-login-div">
            <div className="cat-reg-div">
-              <img className="cat-reg-img"width="300"src={catReg} alt="" />
+              <img className="cat-reg-img" width="300"src={catReg} alt="" />
            </div>
             <div>
               <div className="login-title"><h1>MemeBook</h1><br></br><h1>Login</h1></div>
@@ -59,8 +59,8 @@ const Login = ({setUser, setProfile}) => {
                   </div>
                 </div>
             </div>
-            <div>
-              <img width="400"src={catCig} alt="" />
+            <div className="cat-cig-div">
+              <img className="cat-reg-img" width="400"src={catCig} alt="" />
             </div>
         </div>
      );
