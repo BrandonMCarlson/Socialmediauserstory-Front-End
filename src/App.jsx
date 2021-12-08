@@ -18,7 +18,9 @@ function App() {
   const [friends, setFriends] = useState([]);
   const [profile, setProfile] = useState({});
   const [searchText, setSearchText] = useState("");
+  const [request, setRequest] = useState({});
   
+
   const initialState = {
     firstname: "",
       lastname: "",
@@ -81,7 +83,7 @@ const getAllUsers = async () => {
         <Routes>
           <Route path="/" element={<Login setUser={setUser} setProfile={setProfile}  />}></Route>
           <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
-          <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} />}></Route>
+          <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} setRequest={setRequest} />}></Route>
         </Routes>
       </main>
     <footer>

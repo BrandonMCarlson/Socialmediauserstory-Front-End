@@ -7,7 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import TabContext from "@material-ui/lab/TabContext";
 import TabList from "@material-ui/lab/TabList";
 import TabPanel from "@material-ui/lab/TabPanel";
-
+import PendingFriendMapper from "../PendingFriendMapper";
 import PeopleIcon from "@mui/icons-material/People";
 import HomeIcon from "@mui/icons-material/Home";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -23,6 +23,7 @@ const Profile = ({
   setUser,
   profile,
   setProfile,
+  setRequest,
 }) => {
   const [value, setValue] = React.useState("1");
   
@@ -97,7 +98,7 @@ const Profile = ({
                     PROFILE IN CONSOLE
                   </button>
                 </TabPanel>
-                <TabPanel value="3">Item Three</TabPanel>
+                <TabPanel value="3"><PendingFriendMapper setRequest={setRequest} user={user}/></TabPanel>
               </TabContext>
             </Box>
           </div>
