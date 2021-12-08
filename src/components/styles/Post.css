@@ -1,0 +1,11 @@
+.add-post-button {
+    margin-left: 20px;
+    margin-top: 4px!important;
+    background-color: transparent!important;
+    border: none!important;
+    box-shadow: none!important;
+    margin-top: 0px;
+    padding: 7px;
+    padding-left: 9px;
+    padding-right: 9px;
+}

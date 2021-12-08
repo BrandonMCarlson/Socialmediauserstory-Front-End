@@ -7,8 +7,10 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 import useForm from '../useForm';
 import axios from 'axios';
+import "./styles/Post.css";
 
 export default function Post({profile, user}) {
 
@@ -37,7 +39,7 @@ const createPost = async () => {
             name="body"
             onChange={(event)=>handleChange(event)}
           />
-          <button onClick={(event)=>handleSubmit(event)}>POST ME</button>
+          <SendIcon fontSize="large" onClick={(event)=>handleSubmit(event)} className="add-post-button our-button " type="subbmit" onClick={(event)=>handleSubmit(event)}/>
         </div>
         
         <div>
