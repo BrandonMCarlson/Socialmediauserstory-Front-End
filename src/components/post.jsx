@@ -6,26 +6,40 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TextField from "@mui/material/TextField";
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 import useForm from '../useForm';
+import axios from 'axios';
+import "./styles/Post.css";
 
-export default function Post({profile}) {
+export default function Post({profile, user}) {
 
+const createPost = async () => {
+  axios
+    .post(`http://localhost:5000/api/users/${user._id}/posts`, {
+      body: formValue.body,
+    },
+    { headers: { 'x-auth-token': localStorage.getItem('token') } })
+    .then((res)=> {
+      document.getElementById('post').value = ''
+    }).catch((error) => console.log(error));
+  }
 
-
-  const { formValue, handleChange, handleSubmit, setFormValue } = useForm();
+  const { formValue, handleChange, handleSubmit, setFormValue } = useForm(createPost);
 
   return (
     <div>
-        <div>
+        <div className="posts-text">
         <TextField
             className="post-text-field"
             id="post"
             label="Post Something"
             multiline
             InputLabelProps={{ shrink: true }}           
-            name="aboutMe"
-            disabled
+            name="body"
+            onChange={(event)=>handleChange(event)}
           />
+          <SendIcon fontSize="large" onClick={(event)=>handleSubmit(event)} className="add-post-button our-button " type="subbmit" onClick={(event)=>handleSubmit(event)}/>
         </div>
         
         <div>

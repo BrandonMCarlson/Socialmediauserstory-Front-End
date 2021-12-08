@@ -24,6 +24,7 @@ const Profile = ({
   profile,
   setProfile,
   setRequest,
+  request,
 }) => {
   const [value, setValue] = React.useState("1");
   
@@ -31,10 +32,13 @@ const Profile = ({
     setValue(newValue);
   };
 
+  useEffect(() => {
+    
+  }, [profile._id]);
+
   return (
     <div>
       <Button />
-      <h1>Profile</h1>
       <div className="profile-page-grid">
         <div>
           <ProfilePhoto profile={profile} />
@@ -43,7 +47,7 @@ const Profile = ({
         </div>
 
         <div>
-          <Post profile={profile}/>
+          <Post profile={profile} user={user}/>
         </div>
         <div>
           <div className="tabs">
@@ -56,7 +60,7 @@ const Profile = ({
                   >
                     <Tab
                       label={
-                        <div className={"icon-tab-style"}>
+                        <div onClick={()=>setProfile(user)} className={"icon-tab-style"}>
                           <HomeIcon fontSize="large" />
                           <div className="text-tab-style">
                             <b>Home</b>
@@ -98,7 +102,7 @@ const Profile = ({
                     PROFILE IN CONSOLE
                   </button>
                 </TabPanel>
-                <TabPanel value="3"><PendingFriendMapper getAProfile={getAProfile} setRequest={setRequest} user={user}/></TabPanel>
+                <TabPanel value="3"><PendingFriendMapper getAProfile={getAProfile} setRequest={setRequest} user={user} request={request}/></TabPanel>
               </TabContext>
             </Box>
           </div>

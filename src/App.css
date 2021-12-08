@@ -1,14 +1,17 @@
 body {
   background: cover;
-  background-image: linear-gradient(to right top,#1fff88, #3b8ad9);
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin-top: 0px;
-  margin-left: 0px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%!important;
 }
 
-.App {
-  
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+html{
+
+    height: 100%;
+    background-image: linear-gradient(to right top,#1fff88, #3b8ad9);
+    overflow-x: hidden;
+
 }
 
 li{
@@ -20,12 +23,12 @@ ul{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.div{
+div{
   
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-footer {
+.footer-div {
     position: absolute;
     bottom: 0;
     right: 0;

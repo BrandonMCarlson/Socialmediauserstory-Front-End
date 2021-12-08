@@ -6,10 +6,21 @@ import TextField from "@mui/material/TextField";
 
 const AboutMe = ({ user, setUser, profile }) => {
   const removeDisable = () => {
+<<<<<<< HEAD
     document.getElementById("aboutMe").disabled = false;
   };
 
 
+=======
+    if (user === profile) {
+      document.getElementById("aboutMe").disabled = false;
+    }
+    else{
+      return
+    }
+    
+  };
+>>>>>>> d31a449d09dde2efeeed6aa72f56abbbf5491cd6
 
   const updateAboutMe = async () => {
     await axios
@@ -54,9 +65,10 @@ const AboutMe = ({ user, setUser, profile }) => {
         />
       </span>
       <span>
-        <button onClick={(event) => handleSubmit(event)} className="our-button about-me-button">
+        {profile !== user ? null : <button onClick={(event) => handleSubmit(event)} className="our-button about-me-button">
           <AppRegistrationIcon fontSize="medium"></AppRegistrationIcon>
-        </button>
+        </button>}
+        
       </span>
     </div>
   );

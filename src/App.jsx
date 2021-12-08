@@ -2,9 +2,6 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Post from "./components/Post";
-import jwtDecode from "jwt-decode";
-import Welcome from "./components/pages/Welcome";
 import Profile from "./components/pages/Profile";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
@@ -13,7 +10,7 @@ import SearchBox from "./components/SearchBox";
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 
 function App() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
   const [allUsers, setAllUsers] = useState([]);
   const [friends, setFriends] = useState([]);
   const [profile, setProfile] = useState({});
@@ -44,10 +41,9 @@ const getAllUsers = async () => {
 
    const logoutUser = async () => {
     console.log(localStorage.getItem("token"));
-    localStorage.removeItem("token");
-    setUser(null);
-    navigate("/");
-    window.location.reload(true);
+    await localStorage.removeItem("token");
+    await setUser(null);
+    await navigate("/");
     console.log(localStorage.getItem("token"));
   };
 
@@ -60,8 +56,8 @@ const getAllUsers = async () => {
       })
   }
   
-  const getAProfile = async (friend) => {   
-    await axios
+  const getAProfile = (friend) => {   
+      axios
       .get(`http://localhost:5000/api/users/${friend}`, { headers: { 'x-auth-token': localStorage.getItem('token') } })
       .then((res) => {
         setRequest(res.data);
@@ -76,21 +72,20 @@ const getAllUsers = async () => {
   }, [user]);
 
   return (
-    <div className="App">
-      
-    <NavBar setSearchText={setSearchText} profile={profile}/>
+    <div>
+    <NavBar setSearchText={setSearchText} profile={profile} user={user}/>
     <SearchBox allUsers={allUsers} setProfile={setProfile} searchText={searchText}/>
-    
-      <main>
+      <div>
         <Routes>
           <Route path="/" element={<Login setUser={setUser} setProfile={setProfile}  />}></Route>
-          <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
+          <Route path="register" element={<Register setUser={setUser} user={user} setProfile={setProfile}/>}></Route>
           <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} request={request} setRequest={setRequest} />}></Route>
         </Routes>
-      </main>
-    <footer>
-      {!user ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
-    </footer>
+        <div className="footer-div">
+        {user === null ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
+      </div>
+      </div>
+   
     </div>
   );
 }

@@ -15,7 +15,7 @@
 	text-shadow:0px 1px 0px #070707;
 }
 .our-button:hover {
-	background-color:#484848;
+	background-color:#484848!important;
 }
 .our-button:active {
 	position:relative;

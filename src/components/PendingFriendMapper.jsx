@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import DoNotDisturbIcon from "@mui/icons-material/DoNotDisturb";
+import "./styles/PendingFriendMapper.css";
 
 
 
@@ -24,12 +25,12 @@ const PendingFriendsMapper = ({ user, setRequest, getAProfile, request }) => {
   return (
     <div>
       <div>
-        {user.pendingRequest.map((friend, index) => (
+        {user === null ? null : user.pendingRequest.map((friend, index) => (
           <div key={index} className="add-friend">
             <div className="friend-request">
             {()=>getAProfile(friend)}
               <div>
-                {friend}
+                  {friend}
                 <span>
                   <CheckBoxIcon
                     className="add-friend-button"
@@ -38,7 +39,7 @@ const PendingFriendsMapper = ({ user, setRequest, getAProfile, request }) => {
                 </span>
                 <span>
                   <DoNotDisturbIcon
-                    className="comments-likes-button"
+                    className="comments-likes-button deny-friend-button"
                     onClick={() => denyFriendRequest(friend)}
                   />
                 </span>

@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import catCig from  "../../images/cat-cig.jpg";
 import catReg from "../../images/cat-register.jpg";
+import "./Login.css";
 
 
 const Login = ({setUser, setProfile}) => {
@@ -54,11 +55,11 @@ const Login = ({setUser, setProfile}) => {
                       <TextField id="outlined-basic" type="password" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" />
                       <p></p>
                       <div className="register-here-button">
-                        <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Login Here</Button>
+                        <Button className="login-buttons" type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Login Here</Button>
                       </div>
                   </form>
                   <div className="register-here-button">
-                    <Link style={{ textDecoration: 'none' }} to="/register"> <Button variant="contained">Regester Here</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to="/register"> <Button className="login-buttons" variant="contained">Regester Here</Button></Link>
                   </div>
                 </div>
             </div>

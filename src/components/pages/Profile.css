@@ -42,9 +42,9 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1sqnrkk-MuiInputBase-inp
 
 
 .about-me-button {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
+    background-color: transparent!important;
+    border: none!important;
+    box-shadow: none!important;
     margin-left: 14px;
     margin-top: 4px;
     padding: 7px;

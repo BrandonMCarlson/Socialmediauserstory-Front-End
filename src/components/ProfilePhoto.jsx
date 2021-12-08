@@ -6,11 +6,10 @@ import "./ProfilePhoto.css";
 const ProfilePhoto = ({profile}) => {
     return ( 
         <div>
-            <h1>{profile.firstName}</h1>
+            <h2>{profile.firstName} {profile.lastName}</h2>
             <img
             className="photo-style"
-            src={MyPhoto}
-            // src={`http://localhost:5000/${profile.image}`}
+            src={`http://localhost:5000/${profile.image}`}
             alt={`${profile.firstName}'s photos'`}
             width="250"
             />
