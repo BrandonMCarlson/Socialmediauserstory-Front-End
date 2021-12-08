@@ -9,9 +9,7 @@ const AboutMe = ({ user, setUser, profile }) => {
     document.getElementById("aboutMe").disabled = false;
   };
 
-  useEffect(() => {
-    
-  }, [profile._id]);
+
 
   const updateAboutMe = async () => {
     await axios
@@ -35,6 +33,10 @@ const AboutMe = ({ user, setUser, profile }) => {
 
   const { formValue, handleChange, handleSubmit, setFormValue } =
     useForm(updateAboutMe);
+
+    useEffect(() => {
+    
+    }, [profile._id]);
 
   return (
     <div>

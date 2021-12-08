@@ -53,7 +53,7 @@ const getAllUsers = async () => {
 
   const getFriends = async () => {   
     await axios
-      .get("http://localhost:5000/api/users", { headers: { 'x-auth-token': localStorage.getItem('token') } })
+      .get(`http://localhost:5000/api/users/`, { headers: { 'x-auth-token': localStorage.getItem('token') } })
       .then((res) => {
         setFriends(res.data);
         console.log(res.data)
@@ -71,7 +71,9 @@ const getAllUsers = async () => {
 
   useEffect(() => {
     getAllUsers();
-  }, []);
+    getFriends();
+    getAProfile();
+  }, [user]);
 
   return (
     <div className="App">
