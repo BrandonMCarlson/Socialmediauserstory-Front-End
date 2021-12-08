@@ -48,9 +48,10 @@ const AboutMe = ({ user, setUser, profile }) => {
         />
       </span>
       <span>
-        <button onClick={(event) => handleSubmit(event)} className="our-button about-me-button">
+        {profile !== user ? null : <button onClick={(event) => handleSubmit(event)} className="our-button about-me-button">
           <AppRegistrationIcon fontSize="medium"></AppRegistrationIcon>
-        </button>
+        </button>}
+        
       </span>
     </div>
   );
