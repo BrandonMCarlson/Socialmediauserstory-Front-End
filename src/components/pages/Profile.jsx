@@ -47,7 +47,7 @@ const Profile = ({
         </div>
 
         <div>
-          <Post profile={profile} user={user}/>
+          <Post profile={profile} user={user} setUser={setUser}/>
         </div>
         <div>
           <div className="tabs">

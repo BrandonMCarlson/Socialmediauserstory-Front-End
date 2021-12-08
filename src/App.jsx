@@ -20,8 +20,8 @@ function App() {
 
   const initialState = {
     firstname: "",
-      lastname: "",
-      email: "",
+    lastname: "",
+    email: "",
     password: "",
     confirmPassword: "",
   };

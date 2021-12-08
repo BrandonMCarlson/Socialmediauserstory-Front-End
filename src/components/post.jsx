@@ -12,7 +12,7 @@ import useForm from '../useForm';
 import axios from 'axios';
 import "./styles/Post.css";
 
-export default function Post({profile, user}) {
+export default function Post({profile, user, setUser}) {
 
 const createPost = async () => {
   axios
@@ -24,6 +24,25 @@ const createPost = async () => {
       document.getElementById('post').value = ''
     }).catch((error) => console.log(error));
   }
+
+const updateAboutMe = async (postId) => {
+  await axios
+    .put(
+      `http://localhost:5000/api/users/${user._id}/posts/${postId}`,
+      {
+        body: user.body,
+        likes: user.likes + 1,
+        disLikes: user.disLikes,
+        email: user.email,
+      },
+      { headers: { "x-auth-token": localStorage.getItem("token") } }
+    )
+    .then((res) => {
+      setUser(res.data);
+      document.getElementById("aboutMe").disabled = true;
+      console.log(user);
+    });
+};  
 
   const { formValue, handleChange, handleSubmit, setFormValue } = useForm(createPost);
 
