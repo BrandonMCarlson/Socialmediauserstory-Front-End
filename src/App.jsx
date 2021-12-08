@@ -2,9 +2,6 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Post from "./components/Post";
-import jwtDecode from "jwt-decode";
-import Welcome from "./components/pages/Welcome";
 import Profile from "./components/pages/Profile";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
@@ -70,6 +67,7 @@ const getAllUsers = async () => {
 
   useEffect(() => {
     getAllUsers();
+    setUser({});
   }, []);
 
   return (
@@ -83,7 +81,7 @@ const getAllUsers = async () => {
           <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} request={request} setRequest={setRequest} />}></Route>
         </Routes>
         <div className="footer-div">
-        {!user ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
+        {!user._id ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
       </div>
       </div>
    
