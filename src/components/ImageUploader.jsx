@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
 
 const ImageUpload = (props) => {
     const [previewUrl, setPreviewUrl] = useState();
@@ -34,16 +35,16 @@ const ImageUpload = (props) => {
     };
 
     return ( 
-        <div>
-            <input type="text"
-                id={props.user._id}
-                ref={filePickerRef}
-                type="file"
-                accept=".jpg,.png,.jpeg"
-                onChange={pickedHandler}
-            />
-           
-            <div><img src={props.file} alt="nope" />{!props.file ? "hi" : "file"}</div>
+        <div className="image-uploader-div">        
+           <label className="login-buttons">Upload Image
+                <input type="text"
+                    id={props.user._id}
+                    ref={filePickerRef}
+                    type="file"
+                    accept=".jpg,.png,.jpeg"
+                    onChange={pickedHandler}
+                />
+           </label><span className="img-desc">{!props.file ? null : props.file.name}</span>
         </div>
      );
 }
