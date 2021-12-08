@@ -6,6 +6,12 @@ import TextField from "@mui/material/TextField";
 
 const AboutMe = ({ user, setUser, profile }) => {
   const removeDisable = () => {
+<<<<<<< HEAD
+    document.getElementById("aboutMe").disabled = false;
+  };
+
+
+=======
     if (user === profile) {
       document.getElementById("aboutMe").disabled = false;
     }
@@ -14,6 +20,7 @@ const AboutMe = ({ user, setUser, profile }) => {
     }
     
   };
+>>>>>>> d31a449d09dde2efeeed6aa72f56abbbf5491cd6
 
   const updateAboutMe = async () => {
     await axios
@@ -37,6 +44,10 @@ const AboutMe = ({ user, setUser, profile }) => {
 
   const { formValue, handleChange, handleSubmit, setFormValue } =
     useForm(updateAboutMe);
+
+    useEffect(() => {
+    
+    }, [profile._id]);
 
   return (
     <div>
