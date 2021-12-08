@@ -40,31 +40,12 @@ const getAllUsers = async () => {
     })
 }
 
-  const registerUser = async () => {
-    await axios
-      .post("http://localhost:5000/api/users/register", {
-        firstName: data.firstname,
-        lastName: data.lastname,
-        email: data.email,
-        password: data.password,
-        confirmPassword: data.confirmPassword
-      })
-      .then((res) => {
-        localStorage.setItem("token", res.headers["x-auth-token"]);
-        const user = jwtDecode(localStorage.getItem("token"));
-        setUser(user);
-        console.log("token", res.headers["x-auth-token"]);
-      })
-      .catch((error) => console.log(error));
-    console.log(user);
-  };
-
-
    const logoutUser = async () => {
     console.log(localStorage.getItem("token"));
     localStorage.removeItem("token");
     setUser(null);
     navigate("/");
+    window.location.reload(true);
     console.log(localStorage.getItem("token"));
   };
 
@@ -85,23 +66,6 @@ const getAllUsers = async () => {
         console.log(res.data)
       })
   }
-
-  const updateAboutMe = async () => {
-    await axios
-      .put(`http://localhost:5000/api/users/61aad32098c81a5fe8132bbc`, {
-            firstName: user.firstName,
-            lastName: user.lastName,
-            aboutMe: "update from FRONTEND 2",
-            email: user.email,
-            password: user.password,
-      }, 
-      { headers: { 'x-auth-token': localStorage.getItem('token') } })
-      .then((res) => {
-        setUser(res.data);
-        console.log(user);
-      });
-  }
-
 
   useEffect(() => {
     getAllUsers();
