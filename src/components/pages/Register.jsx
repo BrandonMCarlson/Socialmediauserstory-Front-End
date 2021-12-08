@@ -59,10 +59,10 @@ const Register = ({ user, setUser }) => {
             <TextField id="outlined-basic" name="email" label="E-mail" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
           <div className="input-div">
-            <TextField id="outlined-basic" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
+            <TextField id="outlined-basic" type="password" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
           <div className="input-div">
-          <TextField id="outlined-basic" name="confirmPassword" label="Confirm Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
+          <TextField id="outlined-basic"  type="password" name="confirmPassword" label="Confirm Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
           <div className="flex-button">
             <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Register</Button>
@@ -70,7 +70,7 @@ const Register = ({ user, setUser }) => {
           <div className="terms">
                 By creating an account you agree to our
                 <p>Terms of <a target="_blank" href="https://www.youtube.com/watch?v=eh7lp9umG2I">Service and Privacy Policy</a></p> 
-      </div>
+          </div>
         </form>
       </div>
       <div className="heman-style">
