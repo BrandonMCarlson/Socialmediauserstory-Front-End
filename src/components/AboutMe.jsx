@@ -9,10 +9,6 @@ const AboutMe = ({ user, setUser, profile }) => {
     document.getElementById("aboutMe").disabled = false;
   };
 
-  useEffect(() => {
-    
-  }, [profile._id]);
-
   const updateAboutMe = async () => {
     await axios
       .put(

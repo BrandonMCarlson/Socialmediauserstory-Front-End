@@ -32,6 +32,10 @@ const Profile = ({
     setValue(newValue);
   };
 
+  useEffect(() => {
+    
+  }, [profile._id]);
+
   return (
     <div>
       <Button />
