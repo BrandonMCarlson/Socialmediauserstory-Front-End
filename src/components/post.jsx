@@ -29,7 +29,7 @@ export default function Post({profile}) {
         </div>
         
         <div>
-        <div>
+          <div>
         <Timeline>
       <TimelineItem>
         <TimelineSeparator>
@@ -54,6 +54,5 @@ export default function Post({profile}) {
     </Timeline>
         </div>
     </div>
- 
-  );
-}
+    </div>
+  )};
