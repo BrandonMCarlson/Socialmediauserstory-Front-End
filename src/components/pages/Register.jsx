@@ -72,7 +72,7 @@ const Register = ({ user, setUser, setProfile }) => {
             <ImageUpload file={file} setFile={setFile} user={user}/>
           </div>
           <div className="flex-button">
-            <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Register</Button>
+            <Button className="login-buttons" type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Register</Button>
           </div>
           <div className="terms">
                 By creating an account you agree to our
