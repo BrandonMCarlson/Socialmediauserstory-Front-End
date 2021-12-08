@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom"
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import { Icon } from '@mui/material';
 import GroupsIcon from '@mui/icons-material/Groups';
-import useForm from '../useForm';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -69,6 +68,7 @@ export default function NavBar({setSearchText, profile}) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          <Link to="/" style={{ textDecoration: 'none', color: 'white'}}>
           <GroupsIcon
             size="large"
             edge="start"
@@ -76,14 +76,16 @@ export default function NavBar({setSearchText, profile}) {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           />
+          </Link>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MemeBook
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>MemeBook</Link>
           </Typography>
+        
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
