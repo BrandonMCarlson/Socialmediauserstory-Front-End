@@ -25,7 +25,7 @@ const PendingFriendsMapper = ({ user, setRequest, getAProfile, request }) => {
   return (
     <div>
       <div>
-        {user.prndingRequest === null ? null : user.pendingRequest.map((friend, index) => (
+        {user === null ? null : user.pendingRequest.map((friend, index) => (
           <div key={index} className="add-friend">
             <div className="friend-request">
             {()=>getAProfile(friend)}
