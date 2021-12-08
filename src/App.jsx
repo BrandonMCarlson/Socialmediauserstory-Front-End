@@ -60,11 +60,11 @@ const getAllUsers = async () => {
       })
   }
   
-  const getAProfile = async () => {   
+  const getAProfile = async (friend) => {   
     await axios
-      .get(`http://localhost:5000/api/users/61a6f519f357f2f6fdfec15f`, { headers: { 'x-auth-token': localStorage.getItem('token') } })
+      .get(`http://localhost:5000/api/users/${friend}`, { headers: { 'x-auth-token': localStorage.getItem('token') } })
       .then((res) => {
-        setProfile(res.data);
+        setRequest(res.data);
         console.log(res.data)
       })
   }
@@ -83,7 +83,7 @@ const getAllUsers = async () => {
         <Routes>
           <Route path="/" element={<Login setUser={setUser} setProfile={setProfile}  />}></Route>
           <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
-          <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} setRequest={setRequest} />}></Route>
+          <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} request={request} setRequest={setRequest} />}></Route>
         </Routes>
       </main>
     <footer>

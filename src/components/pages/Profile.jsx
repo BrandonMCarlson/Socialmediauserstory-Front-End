@@ -98,7 +98,7 @@ const Profile = ({
                     PROFILE IN CONSOLE
                   </button>
                 </TabPanel>
-                <TabPanel value="3"><PendingFriendMapper setRequest={setRequest} user={user}/></TabPanel>
+                <TabPanel value="3"><PendingFriendMapper getAProfile={getAProfile} setRequest={setRequest} user={user}/></TabPanel>
               </TabContext>
             </Box>
           </div>
