@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import GroupsIcon from '@mui/icons-material/Groups';
+import userEvent from "@testing-library/user-event";
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -53,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar({setSearchText, profile}) {
+export default function NavBar({setSearchText, profile, user}) {
 
   useEffect(() => {
     setSearchText("");
@@ -68,7 +69,7 @@ export default function NavBar({setSearchText, profile}) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Link to="/" style={{ textDecoration: 'none', color: 'white'}}>
+          <Link to={user === null ? "/" : "/profile"} style={{ textDecoration: 'none', color: 'white'}}>
           <GroupsIcon
             size="large"
             edge="start"
@@ -83,7 +84,7 @@ export default function NavBar({setSearchText, profile}) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>MemeBook</Link>
+            <Link to={user === null ? "/" : "/profile"} style={{ textDecoration: 'none', color: 'white' }}>MemeBook</Link>
           </Typography>
         
           <Search>

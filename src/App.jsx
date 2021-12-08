@@ -10,7 +10,7 @@ import SearchBox from "./components/SearchBox";
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 
 function App() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
   const [allUsers, setAllUsers] = useState([]);
   const [friends, setFriends] = useState([]);
   const [profile, setProfile] = useState({});
@@ -41,9 +41,9 @@ const getAllUsers = async () => {
 
    const logoutUser = async () => {
     console.log(localStorage.getItem("token"));
-    localStorage.removeItem("token");
-    setUser(null);
-    navigate("/");
+    await localStorage.removeItem("token");
+    await setUser(null);
+    await navigate("/");
     console.log(localStorage.getItem("token"));
   };
 
@@ -67,12 +67,11 @@ const getAllUsers = async () => {
 
   useEffect(() => {
     getAllUsers();
-    setUser({});
   }, []);
 
   return (
     <div>
-    <NavBar setSearchText={setSearchText} profile={profile}/>
+    <NavBar setSearchText={setSearchText} profile={profile} user={user}/>
     <SearchBox allUsers={allUsers} setProfile={setProfile} searchText={searchText}/>
       <div>
         <Routes>
@@ -81,7 +80,7 @@ const getAllUsers = async () => {
           <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} request={request} setRequest={setRequest} />}></Route>
         </Routes>
         <div className="footer-div">
-        {!user._id ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
+        {user === null ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
       </div>
       </div>
    
