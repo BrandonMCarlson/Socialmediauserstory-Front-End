@@ -6,6 +6,8 @@ import useForm from "../../useForm";
 import Buttons from "../Button";
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
+import heman from  "../../images/heman.jpg";
+import kyle from "../../images/kyle.jpg";
 import "../styles/register.css";
 
 const Register = ({ user, setUser }) => {
@@ -38,7 +40,10 @@ const Register = ({ user, setUser }) => {
     useForm(registerUser);
 
   return (
-    <div>
+    <div className="register-grid">
+      <div className="heman-style">
+        <img className="heman-image" width="300" src={heman} alt="heman hey" />
+      </div>
       <div className="flex">
         <form>
           <div>
@@ -62,12 +67,14 @@ const Register = ({ user, setUser }) => {
           <div className="flex-button">
             <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Register</Button>
           </div>
-          
+          <div className="terms">
+                By creating an account you agree to our
+                <p>Terms of <a target="_blank" href="https://www.youtube.com/watch?v=eh7lp9umG2I">Service and Privacy Policy</a></p> 
+      </div>
         </form>
       </div>
-      <div className="terms">
-      By creating an account you agree to our
-       <p>Terms of <a target="_blank" href="https://www.youtube.com/watch?v=eh7lp9umG2I">Service and Privacy Policy</a></p> 
+      <div className="heman-style">
+          <img src={kyle}  className="kyle-image" alt="karate kyle" />
       </div>
   
     </div>

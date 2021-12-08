@@ -47,7 +47,6 @@ const getAllUsers = async () => {
     localStorage.removeItem("token");
     setUser(null);
     navigate("/");
-    window.location.reload(true);
     console.log(localStorage.getItem("token"));
   };
 
@@ -74,21 +73,20 @@ const getAllUsers = async () => {
   }, []);
 
   return (
-    <div className="App">
-      
+    <div>
     <NavBar setSearchText={setSearchText} profile={profile}/>
     <SearchBox allUsers={allUsers} setProfile={setProfile} searchText={searchText}/>
-    
-      <main>
+      <div>
         <Routes>
           <Route path="/" element={<Login setUser={setUser} setProfile={setProfile}  />}></Route>
           <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
           <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} request={request} setRequest={setRequest} />}></Route>
         </Routes>
-      </main>
-    <footer>
-      {!user ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
-    </footer>
+        <div className="footer-div">
+        {!user ? null : <MeetingRoomIcon onClick={()=>logoutUser()} fontSize="large"/>}
+      </div>
+      </div>
+   
     </div>
   );
 }
