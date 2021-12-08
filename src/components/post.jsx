@@ -29,7 +29,7 @@ const createPost = async () => {
 
   return (
     <div>
-        <div>
+        <div className="posts-text">
         <TextField
             className="post-text-field"
             id="post"

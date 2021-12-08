@@ -35,7 +35,6 @@ const Profile = ({
   return (
     <div>
       <Button />
-      <h1>Profile</h1>
       <div className="profile-page-grid">
         <div>
           <ProfilePhoto profile={profile} />
