@@ -79,7 +79,7 @@ const getAllUsers = async () => {
       <div>
         <Routes>
           <Route path="/" element={<Login setUser={setUser} setProfile={setProfile}  />}></Route>
-          <Route path="register" element={<Register setUser={setUser} user={user} />}></Route>
+          <Route path="register" element={<Register setUser={setUser} user={user} setProfile={setProfile}/>}></Route>
           <Route path="profile" element={<Profile user={user} setUser={setUser} setProfile={setProfile} profile={profile} getAProfile={getAProfile} getFriends={getFriends} request={request} setRequest={setRequest} />}></Route>
         </Routes>
         <div className="footer-div">

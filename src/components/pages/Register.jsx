@@ -3,6 +3,7 @@ import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import useForm from "../../useForm";
+import ImageUpload from "../ImageUploader";
 import Buttons from "../Button";
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
@@ -10,7 +11,8 @@ import heman from  "../../images/heman.jpg";
 import kyle from "../../images/kyle.jpg";
 import "../styles/register.css";
 
-const Register = ({ user, setUser }) => {
+const Register = ({ user, setUser, setProfile }) => {
+  const [file, setFile] = useState()  
   const navigate = useNavigate();
 
   const registerUser = async () => {
@@ -18,24 +20,26 @@ const Register = ({ user, setUser }) => {
       alert("Passwords do not match!");
       return;
     }
+    const form = new FormData();
+    form.append('firstName', formValue.firstName);
+    form.append('lastName', formValue.lastName);
+    form.append('email', formValue.email);
+    form.append('password', formValue.password);
+    form.append('image', file);
     await axios
-      .post("http://localhost:5000/api/users/register", {
-        firstName: formValue.firstName,
-        lastName: formValue.lastName,
-        email: formValue.email,
-        password: formValue.password,
-      })
+      .post("http://localhost:5000/api/users/register", form)
       .then((res) => {
         localStorage.setItem("token", res.headers["x-auth-token"]);
         const user = jwtDecode(localStorage.getItem("token"));
         setUser(user);
+        setProfile(user);
         navigate("/profile");
         console.log("token", res.headers["x-auth-token"]);
       })
       .catch((error) => console.log(error));
     console.log(user);
   };
-
+  
   const { formValue, handleChange, handleSubmit, setFormValue } =
     useForm(registerUser);
 
@@ -63,6 +67,9 @@ const Register = ({ user, setUser }) => {
           </div>
           <div className="input-div">
           <TextField id="outlined-basic"  type="password" name="confirmPassword" label="Confirm Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
+          </div>
+          <div> 
+            <ImageUpload file={file} setFile={setFile} user={user}/>
           </div>
           <div className="flex-button">
             <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Register</Button>
