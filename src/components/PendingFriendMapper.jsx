@@ -29,7 +29,7 @@ const PendingFriendsMapper = ({ user, setRequest, getAProfile, request }) => {
             <div className="friend-request">
             {()=>getAProfile(friend)}
               <div>
-                {friend}
+                {request.firstName}  {request.lastName}
                 <span>
                   <CheckBoxIcon
                     className="add-friend-button"

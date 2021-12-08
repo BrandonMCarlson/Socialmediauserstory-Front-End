@@ -24,6 +24,7 @@ const Profile = ({
   profile,
   setProfile,
   setRequest,
+  request,
 }) => {
   const [value, setValue] = React.useState("1");
   
@@ -56,7 +57,7 @@ const Profile = ({
                   >
                     <Tab
                       label={
-                        <div className={"icon-tab-style"}>
+                        <div onClick={()=>setProfile(user)} className={"icon-tab-style"}>
                           <HomeIcon fontSize="large" />
                           <div className="text-tab-style">
                             <b>Home</b>
@@ -98,7 +99,7 @@ const Profile = ({
                     PROFILE IN CONSOLE
                   </button>
                 </TabPanel>
-                <TabPanel value="3"><PendingFriendMapper getAProfile={getAProfile} setRequest={setRequest} user={user}/></TabPanel>
+                <TabPanel value="3"><PendingFriendMapper getAProfile={getAProfile} setRequest={setRequest} user={user} request={request}/></TabPanel>
               </TabContext>
             </Box>
           </div>
