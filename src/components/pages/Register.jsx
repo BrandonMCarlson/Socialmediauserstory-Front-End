@@ -3,7 +3,9 @@ import { Routes, Link, Route, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import useForm from "../../useForm";
-import Button from "../Button";
+import Buttons from "../Button";
+import TextField from "@mui/material/TextField";
+import Button from '@mui/material/Button';
 import "../styles/register.css";
 
 const Register = ({ user, setUser }) => {
@@ -37,84 +39,37 @@ const Register = ({ user, setUser }) => {
 
   return (
     <div>
-      <Button />
-      <div>
+      <div className="flex">
         <form>
-          <h1>Register Below</h1>
-          <br />
-          <br />
-          <div className="form-group">
-            <label htmlFor="firstname">First Name</label>
-            <input
-              autoFocus
-              placeholder="First Name"
-              onChange={(event) => handleChange(event)}
-              name="firstName"
-              type="text"
-              className="form-control"
-              id="firstname"
-              required
-            />
+          <div>
+            <h1 className="heading">Register Below</h1>
           </div>
-          <div className="form-group">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              placeholder="Last Name"
-              onChange={(event) => handleChange(event)}
-              name="lastName"
-              type="text"
-              className="form-control"
-              id="lastname"
-              required
-            />
+          <div className="input-div">
+            <TextField id="outlined-basic" name="firstName" label="First Name" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              placeholder="E-mail"
-              onChange={(event) => handleChange(event)}
-              name="email"
-              type="email"
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              required
-            />
+          <div className="input-div">
+            <TextField id="outlined-basic" name="lastName" label="Last Name" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
-
-          <div className="form-group">
-            <label htmlFor="password">Create Password</label>
-            <input
-              placeholder="Password"
-              onChange={(event) => handleChange(event)}
-              name="password"
-              type="password"
-              className="form-control"
-              id="password"
-              required
-            />
+          <div className="input-div">
+            <TextField id="outlined-basic" name="email" label="E-mail" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Confirm Password</label>
-            <input
-              placeholder="Confirm Password"
-              onChange={(event) => handleChange(event)}
-              name="confirmPassword"
-              type="password"
-              className="form-control"
-              id="password"
-              required
-            />
+          <div className="input-div">
+            <TextField id="outlined-basic" name="password" label="Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
           </div>
-          <button
-            className="our-button button-register"
-            type="subbmit"
-            onClick={(event) => handleSubmit(event)}
-          >
-            Register Here
-          </button>
+          <div className="input-div">
+          <TextField id="outlined-basic" name="confirmPassword" label="Confirm Password" onChange={(event)=>handleChange(event)} variant="outlined" required/>
+          </div>
+          <div className="flex-button">
+            <Button type="subbmit" onClick={(event)=>handleSubmit(event)} variant="contained">Register</Button>
+          </div>
+          
         </form>
       </div>
+      <div className="terms">
+      By creating an account you agree to our
+       <p>Terms of <a target="_blank" href="https://www.youtube.com/watch?v=eh7lp9umG2I">Service and Privacy Policy</a></p> 
+      </div>
+  
     </div>
   );
 };

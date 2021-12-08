@@ -12,6 +12,7 @@ h1 {
     text-align: center;
     width: 100%;
     color: whitesmoke;
+    font-family: 'Sarina', cursive;
 }
 .form-group{
     display: flex;
@@ -40,4 +41,32 @@ h1 {
     font-size: 20px;
     margin-right: 25%;
     margin-left: 46%;
+}
+
+.terms {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-button {
+    display: flex;
+    justify-content: center;
+}
+
+.input-div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.heading{
+    margin-top: 50px;
 }

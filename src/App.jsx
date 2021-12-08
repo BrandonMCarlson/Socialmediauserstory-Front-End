@@ -60,8 +60,8 @@ const getAllUsers = async () => {
       })
   }
   
-  const getAProfile = async (friend) => {   
-    await axios
+  const getAProfile = (friend) => {   
+      axios
       .get(`http://localhost:5000/api/users/${friend}`, { headers: { 'x-auth-token': localStorage.getItem('token') } })
       .then((res) => {
         setRequest(res.data);
