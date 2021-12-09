@@ -67,9 +67,8 @@ const getAllUsers = async () => {
 
   useEffect(() => {
     getAllUsers();
-    getFriends();
-    getAProfile();
-  }, [user]);
+
+  }, []);
 
   return (
     <div>
