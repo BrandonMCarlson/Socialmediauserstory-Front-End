@@ -15,19 +15,19 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const PostMapper = ({ user }) => {
   
-    const addLike = async (postId) => {
+    const addLike = async (post) => {
         await axios
           .put(
-            `http://localhost:5000/api/users/${user._id}/posts/${postId}`,
+            `http://localhost:5000/api/users/${user._id}/posts/${post._id}`,
             {
-              body: user.posts[0].body,
-              likes: user.posts[0].likes + 1,
-              disLikes: user.posts[0].disLikes,
+              body: post.body,
+              likes: post.likes + 1,
+              disLikes: post.disLikes,
             },
             { headers: { "x-auth-token": localStorage.getItem("token") } }
           )
           .then((res) => {
-            console.log(user);
+            console.log(post);
           });
       };  
   
@@ -49,7 +49,7 @@ const PostMapper = ({ user }) => {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                      {post.body}
+                      {post._id}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       {post.body}
@@ -57,7 +57,7 @@ const PostMapper = ({ user }) => {
                   </CardContent>
                   <CardActions>
                     <Button
-                      onClick={() => addLike("61b05d393b63ecf6fd54f9b0")}
+                      onClick={() => addLike(post)}
                       size="small"
                     >
                       {" "}
