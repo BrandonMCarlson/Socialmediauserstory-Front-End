@@ -59,7 +59,7 @@ const Login = ({setUser, setProfile}) => {
                       </div>
                   </form>
                   <div className="register-here-button">
-                    <Link style={{ textDecoration: 'none' }} to="/register"> <Button className="login-buttons" variant="contained">Regester Here</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to="/register"> <Button className="login-buttons" variant="contained">Register Here</Button></Link>
                   </div>
                 </div>
             </div>

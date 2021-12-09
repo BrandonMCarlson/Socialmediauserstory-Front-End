@@ -38,7 +38,6 @@ const Profile = ({
 
   return (
     <div>
-      <Button />
       <div className="profile-page-grid">
         <div>
           <ProfilePhoto profile={profile} />
@@ -85,7 +84,7 @@ const Profile = ({
                         <div className={"icon-tab-style"}>
                           <NotificationsIcon fontSize="large" />
                           <div className="text-tab-style notifiactions-image-text">
-                            <b>Noitifications</b>
+                            <b>Notifications</b>
                           </div>
                         </div>
                       }
